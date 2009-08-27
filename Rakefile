@@ -5,13 +5,15 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "app_store"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = "AppStore is an unofficial implementation of the Apple AppStore API"
+    gem.description = "AppStore allows you to fetch informations about applications (title, description, size, reviews, ...), make searches, go through categories ..."
     gem.email = "fabien@jakimowicz.com"
     gem.homepage = "http://github.com/jakimowicz/app_store"
     gem.authors = ["Fabien Jakimowicz"]
     gem.rubyforge_project = "app_store"
     gem.add_development_dependency "thoughtbot-shoulda"
+    gem.add_dependency "mechanize"
+    gem.add_dependency "plist"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::RubyforgeTasks.new do |rubyforge|
@@ -54,7 +56,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "app_store #{version}"
+  rdoc.title = "AppStore #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
