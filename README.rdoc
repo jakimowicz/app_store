@@ -64,6 +64,7 @@ It provides way to search for applications, navigate through categories.
 * optimize navigation through lists
 * handle 'links' to avoid calling AppStore API for each items in a list
 * use FakeMechanize to unit test each calls
+* handle multiple store/language
 
 == LICENSE
 
