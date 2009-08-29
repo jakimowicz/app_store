@@ -8,7 +8,7 @@ module AppStore::Helper::Plist
       
       # Then, build the content of init_from_plist function
       "@#{attr_name} = plist['#{plist_key}']"
-    end
+    end rescue []
     
     class_eval <<-EOV, __FILE__, __LINE__
       protected
