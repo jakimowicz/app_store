@@ -8,3 +8,7 @@ require 'app_store'
 
 class Test::Unit::TestCase
 end
+
+# Dummy class used for tests
+class AppStore::Dummy < AppStore::Base
+end

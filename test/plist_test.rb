@@ -1,10 +1,6 @@
 require "test_helper"
 
 class PlistTest < Test::Unit::TestCase
-  # Dummy class used for tests
-  class AppStore::Dummy < AppStore::Base
-  end
-  
   should "define a reader accessor for each attribute in mapping" do
     AppStore::Dummy.plist :mapping => { "plist_attribute" => :class_attribute_from_plist_attribute }
     assert ::AppStore::Dummy.instance_methods.include? "class_attribute_from_plist_attribute"
