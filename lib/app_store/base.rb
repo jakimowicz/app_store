@@ -14,6 +14,7 @@ class AppStore::Base
   
   protected
   def init_from_plist(plist)
+    custom_init_from_plist plist if respond_to?(:custom_init_from_plist)
     @raw = plist
   end
 end

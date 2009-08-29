@@ -14,7 +14,6 @@ module AppStore::Helper::Plist
       protected
       def init_from_plist(plist)
         #{"raise AppStore::ParseError unless plist['type'] == '#{params[:accepted_type]}'" if params[:accepted_type]}
-        custom_init_from_plist plist if respond_to?(:custom_init_from_plist)
         super
         #{mapping.join("\n")}
       end
