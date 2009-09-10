@@ -12,6 +12,7 @@ begin
     gem.authors = ["Fabien Jakimowicz"]
     gem.rubyforge_project = "app_store"
     gem.add_development_dependency "thoughtbot-shoulda"
+    gem.add_development_dependency "fake_mechanize"
     gem.add_dependency "mechanize"
     gem.add_dependency "plist"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
