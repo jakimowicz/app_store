@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>page-type</key>
+  <dict>
+    <key>template-name</key><string>software</string>
+    <key>template-parameters</key>
+    <dict>
+    </dict>
+  </dict>
+  <key>title</key><string>Info</string>
+  <key>store-version</key><string>1.0</string>
+  <key>store-client-application</key><string>Software</string>
+  <key>pings</key>
+  <array>
+    <string>http://metrics.apple.com/b/ss/applesuperglobal/1/G.6--NS?h5=appleitmsnaapmb%2Cappleitmsusapmb&amp;pccr=true&amp;pageName=App%20Store-Software%20Page-US-DSLR%20Camera%20Remote%20Professional%20Edition-316771002-onOne%20Software&amp;ch=App%20Store-Software%20Page&amp;g=http%3A%2F%2Fax.itunes.apple.com%2FWebObjects%2FMZStore.woa%2Fwa%2FviewSoftware%3Fid%3D316771002</string>
+  </array>
+  <key>item-metadata</key>
+  <dict>
+    <key>type</key><string>software</string>
+    <key>title</key><string>DSLR Camera Remote Professional Edition</string>
+    <key>item-id</key><integer>316771002</integer>
+    <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=316771002&amp;mt=8</string>
+    <key>release-date</key><date>2009-05-15T07:00:00Z</date>
+    <key>user-rating-count</key><integer>27</integer>
+    <key>average-user-rating</key><real>0.72</real>
+    <key>title2</key><string>27 Ratings</string>
+    <key>user-rating-count-string</key><string>27 Ratings</string>
+    <key>rating</key>
+    <dict>
+      <key>system</key><string>itunes-games</string>
+      <key>rank</key><integer>100</integer>
+      <key>label</key><string>4+</string>
+      <key>description</key><string></string>
+      <key>advisory-array</key>
+      <array>
+      </array>
+    </dict>
+    <key>store-offers</key>
+    <dict>
+      <key>STDQ</key>
+      <dict>
+        <key>action-params</key><string>productType=C&amp;salableAdamId=316771002&amp;pricingParameters=STDQ&amp;price=19990&amp;ct-id=14</string>
+        <key>action-display-name</key><string>BUY NOW</string>
+        <key>price</key><real>19.99000</real>
+        <key>price-display</key><string>$19.99</string>
+        <key>size</key><integer>741197</integer>
+        <key>supported-devices</key>
+        <array>
+          <integer>1</integer>
+        </array>
+        <key>supported-device-types</key>
+        <array>
+          <dict>
+            <key>device-type-id</key><integer>1</integer>
+            <key>minimum-product-version</key><string>2.2.1</string>
+            <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+            <key>minimum-product-version-description</key><string>This application requires the iPhone 2.2.1 Software Update</string>
+          </dict>
+        </array>
+      </dict>
+    </dict>
+    <key>url-page-type</key><string>software</string>
+    <key>bundle-id</key><string>com.ononesoftware.dslrremote</string>
+    <key>artwork-urls</key>
+    <array>
+      <dict>
+        <key>box-height</key><integer>57</integer>
+        <key>needs-shine</key><true/>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r1000/011/Purple/ba/e8/d4/mzl.mvvaiprg.png</string>
+        <key>box-width</key><integer>57</integer>
+      </dict>
+      <dict>
+        <key>box-height</key><integer>480</integer>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r1000/015/Purple/a4/af/07/mzl.hiptvydq.480x480-75.jpg</string>
+        <key>box-width</key><integer>320</integer>
+      </dict>
+      <dict>
+        <key>image-type</key><string>software-icon</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><true/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/011/Purple/ba/e8/d4/mzl.mvvaiprg.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>480</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/010/Purple/38/cd/6c/mzl.inavrpnn.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/010/Purple/38/cd/6c/mzl.inavrpnn.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>480</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/054/Purple/ad/e1/06/mzl.cqmxudaz.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/054/Purple/ad/e1/06/mzl.cqmxudaz.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>480</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/007/Purple/f9/a9/82/mzl.tzbhjmmp.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/007/Purple/f9/a9/82/mzl.tzbhjmmp.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+    </array>
+    <key>company</key>
+    <dict>
+      <key>title</key><string>onOne Software</string>
+      <key>url</key><string>http://www.ononesoftware.com/iphone</string>
+    </dict>
+    <key>domains</key>
+    <array>
+    </array>
+    <key>description</key><string>DSLR Camera Remote Professional Edition is the next-generation cable release for your Canon EOS&#169; or Nikon DSLR camera. Just connect your camera to a Wi-Fi enabled computer and you can instantly adjust its settings, fire the shutter, review images, even get a live viewfinder preview using your Apple iPhone or iPod Touch. DSLR Camera Remote is a must have for remote shooting applications like high or low angles, self-portraits and children. All you need is your DSLR and a Wi-Fi enabled computer to start shooting now.
+
+--------------------
+Important Note
+--------------------
+
+DSLR Camera Remote requires the use of the free server software on a Mac OSX or Windows host computer. You can download the server software from www.ononesoftware.com/iphone.
+
+--------------------
+Summary
+--------------------
+
+• Remotely fire your DSLR over any WiFi network
+• Remotely control the camera settings like shutter-speed, aperture, white-balance, etc.
+• See the images you have taken right on your iPhone or iPod Touch
+• Look through and focus your cameras viewfinder remotely with LiveView preview on supported cameras
+• Great for difficult camera angles where it is difficult to see through the viewfinder
+• Use it for self-portraits, you can compose and review your shot without having to move to the camera
+• Use it for remote firing at weddings and sporting events
+
+-------------------
+Key Features
+-------------------
+
+• Remotely fire your DSLR Camera
+• Remotely adjust your DSLR Camera settings like White Balance, Shutter Speed, Aperture and Exposure Compensation
+• Image Review lets you see the image you just photographed from your DSLR Camera on your iPhone
+• LiveView mode lets you see through the camera&#39;s viewfinder right on your iPhone or iPod Touch (requires the use of a supported camera)
+• Intervalometer – This lets you create a custom self-timer or take up to 999 shots from as little as 1 second apart to up to 1 day apart.
+• Auto Bracketing mode for expanded exposure brackets, perfect for HDR.
+• Burst Mode for continuous shooting.
+
+---------------------------
+Supported Cameras
+---------------------------
+
+Canon EOS
+- EOS Rebel XT/350D/Kiss Digital N
+- EOS Rebel XTi/400D/Kiss Digital X
+- EOS Rebel Xsi/450D/Kiss X2
+- EOS Rebel XS/1000D/KISS F
+- EOS Rebel T1i/500D/Kiss X3 (Temporarily Mac OSX Only)
+- EOS 20D
+- EOS 30D
+- EOS 40D
+- EOS 50D
+- EOS 5D
+- EOS 5D Mark II
+- EOS-1D Mark II
+- EOS-1Ds Mark II
+- EOS-1D Mark II N
+- EOS-1D Mark III
+- EOS-1Ds Mark III
+
+Nikon
+- D40/D40x
+- D60
+- D80
+- D90
+- D5000
+- D200
+- D300
+- D700
+- D3/D3x
+
+Note: Feature availability varies from camera to camera. Check the onOne website for details on your camera.</string>
+    <key>developers-eula</key>
+    <dict>
+      <key>type</key><string>link</string>
+      <key>title</key><string>DSLR Camera Remote Professional Edition - License Agreement</string>
+      <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewEula?id=316771002</string>
+      <key>url-page-type</key><string>eula</string>
+    </dict>
+    <key>view-user-reviews-url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id=316771002</string>
+    <key>version</key><string>1.1.0 (iPhone OS 3.0 Tested)</string>
+    <key>version-external-identifier</key><integer>1890047</integer>
+    <key>version-external-identifiers</key>
+    <array>
+      <integer>1712902</integer>
+      <integer>1890047</integer>
+    </array>
+  </dict>
+</dict>
+</plist>

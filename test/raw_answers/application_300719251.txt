@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>page-type</key>
+  <dict>
+    <key>template-name</key><string>software</string>
+    <key>template-parameters</key>
+    <dict>
+    </dict>
+  </dict>
+  <key>title</key><string>Info</string>
+  <key>store-version</key><string>1.0</string>
+  <key>store-client-application</key><string>Software</string>
+  <key>pings</key>
+  <array>
+    <string>http://metrics.apple.com/b/ss/applesuperglobal/1/G.6--NS?h5=appleitmsnaapmb%2Cappleitmsusapmb&amp;pccr=true&amp;pageName=App%20Store-Software%20Page-US-Keynote%20Remote-300719251-Apple%20Inc.&amp;ch=App%20Store-Software%20Page&amp;g=http%3A%2F%2Fax.itunes.apple.com%2FWebObjects%2FMZStore.woa%2Fwa%2FviewSoftware%3Fid%3D300719251</string>
+  </array>
+  <key>item-metadata</key>
+  <dict>
+    <key>type</key><string>software</string>
+    <key>title</key><string>Keynote Remote</string>
+    <key>item-id</key><integer>300719251</integer>
+    <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=300719251&amp;mt=8</string>
+    <key>release-date</key><date>2009-03-26T07:00:00Z</date>
+    <key>user-rating-count</key><integer>717</integer>
+    <key>average-user-rating</key><real>0.76</real>
+    <key>title2</key><string>717 Ratings</string>
+    <key>user-rating-count-string</key><string>717 Ratings</string>
+    <key>rating</key>
+    <dict>
+      <key>system</key><string>itunes-games</string>
+      <key>rank</key><integer>100</integer>
+      <key>label</key><string>4+</string>
+      <key>description</key><string></string>
+      <key>advisory-array</key>
+      <array>
+      </array>
+    </dict>
+    <key>store-offers</key>
+    <dict>
+      <key>STDQ</key>
+      <dict>
+        <key>action-params</key><string>productType=C&amp;salableAdamId=300719251&amp;pricingParameters=STDQ&amp;price=990&amp;ct-id=14</string>
+        <key>action-display-name</key><string>BUY NOW</string>
+        <key>price</key><real>0.99000</real>
+        <key>price-display</key><string>$0.99</string>
+        <key>size</key><integer>475438</integer>
+        <key>supported-devices</key>
+        <array>
+          <integer>1</integer>
+        </array>
+        <key>supported-device-types</key>
+        <array>
+          <dict>
+            <key>device-type-id</key><integer>1</integer>
+            <key>minimum-product-version</key><string>2.0</string>
+            <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+            <key>minimum-product-version-description</key><string>This application requires the iPhone 2.0 Software Update</string>
+          </dict>
+        </array>
+      </dict>
+    </dict>
+    <key>url-page-type</key><string>software</string>
+    <key>bundle-id</key><string>com.apple.iwork.KeynoteRemote</string>
+    <key>artwork-urls</key>
+    <array>
+      <dict>
+        <key>box-height</key><integer>57</integer>
+        <key>needs-shine</key><false/>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/0e/db/31/mzl.ezrtalgi.png</string>
+        <key>box-width</key><integer>57</integer>
+      </dict>
+      <dict>
+        <key>box-height</key><integer>460</integer>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/91/59/26/mzl.owexgmwt.480x480-75.jpg</string>
+        <key>box-width</key><integer>320</integer>
+      </dict>
+      <dict>
+        <key>image-type</key><string>software-icon</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/0e/db/31/mzl.ezrtalgi.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+    </array>
+    <key>company</key>
+    <dict>
+      <key>title</key><string>Apple Inc.</string>
+      <key>url</key><string>http://www.apple.com/iwork/keynote</string>
+    </dict>
+    <key>domains</key>
+    <array>
+    </array>
+    <key>description</key><string>With Keynote Remote, you can control your Keynote slide presentation on your computer from your iPod touch or iPhone.
+
+Swipe to advance or return to the previous slide.  In portrait mode, see your presenter notes on your iPod touch or iPhone.  In landscape mode, preview your next slide.
+
+Keynote Remote works with your Wi-Fi network, so you can control slide playback from anywhere in the room.
+
+Features
+
+– Control your Keynote presentation
+– Swipe to advance or return to the previous slide
+– See presenter notes on your iPhone or iPod touch
+– Preview your next slide in landscape mode
+– Pair your iPhone or iPod touch to any Mac with Keynote ’09
+
+NOTE: Keynote Remote requires Keynote ’09, part of the iWork ’09 suite.  You will need a working Wi-Fi connection between your iPhone/iPod touch and your Mac.
+
+</string>
+    <key>developers-eula</key>
+    <dict>
+      <key>type</key><string>link</string>
+      <key>title</key><string>Keynote Remote - License Agreement</string>
+      <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewEula?id=300719251</string>
+      <key>url-page-type</key><string>eula</string>
+    </dict>
+    <key>view-user-reviews-url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id=300719251</string>
+    <key>version</key><string>1.1</string>
+    <key>version-external-identifier</key><integer>1562781</integer>
+    <key>version-external-identifiers</key>
+    <array>
+      <integer>1418382</integer>
+      <integer>1562781</integer>
+    </array>
+  </dict>
+</dict>
+</plist>

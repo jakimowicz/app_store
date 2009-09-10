@@ -81,11 +81,5 @@ class ApplicationTest < Test::Unit::TestCase
       end
             
     end
-    
-    
-    should "bleh" do
-      assert true
-    end
-    
   end
 end

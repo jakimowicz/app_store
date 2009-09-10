@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>page-type</key>
+  <dict>
+    <key>template-name</key><string>software</string>
+    <key>template-parameters</key>
+    <dict>
+    </dict>
+  </dict>
+  <key>title</key><string>Info</string>
+  <key>store-version</key><string>1.0</string>
+  <key>store-client-application</key><string>Software</string>
+  <key>pings</key>
+  <array>
+    <string>http://metrics.apple.com/b/ss/applesuperglobal/1/G.6--NS?h5=appleitmsnaapmb%2Cappleitmsusapmb&amp;pccr=true&amp;pageName=App%20Store-Software%20Page-US-Air%20Mouse%20Pro%20%20%28Remote%20%2F%20Trackpad%29-289616509-R.P.A.%20Tech&amp;ch=App%20Store-Software%20Page&amp;g=http%3A%2F%2Fax.itunes.apple.com%2FWebObjects%2FMZStore.woa%2Fwa%2FviewSoftware%3Fid%3D289616509</string>
+  </array>
+  <key>item-metadata</key>
+  <dict>
+    <key>type</key><string>software</string>
+    <key>title</key><string>Air Mouse Pro  (Remote / Trackpad)</string>
+    <key>item-id</key><integer>289616509</integer>
+    <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=289616509&amp;mt=8</string>
+    <key>release-date</key><date>2009-08-18T07:00:00Z</date>
+    <key>user-rating-count</key><integer>294</integer>
+    <key>average-user-rating</key><real>0.78</real>
+    <key>title2</key><string>294 Ratings</string>
+    <key>user-rating-count-string</key><string>294 Ratings</string>
+    <key>rating</key>
+    <dict>
+      <key>system</key><string>itunes-games</string>
+      <key>rank</key><integer>100</integer>
+      <key>label</key><string>4+</string>
+      <key>description</key><string></string>
+      <key>advisory-array</key>
+      <array>
+      </array>
+    </dict>
+    <key>store-offers</key>
+    <dict>
+      <key>STDQ</key>
+      <dict>
+        <key>action-params</key><string>productType=C&amp;salableAdamId=289616509&amp;pricingParameters=STDQ&amp;price=2990&amp;ct-id=14</string>
+        <key>action-display-name</key><string>BUY NOW</string>
+        <key>price</key><real>2.99000</real>
+        <key>price-display</key><string>$2.99</string>
+        <key>size</key><integer>695004</integer>
+        <key>supported-devices</key>
+        <array>
+          <integer>1</integer>
+        </array>
+        <key>supported-device-types</key>
+        <array>
+          <dict>
+            <key>device-type-id</key><integer>1</integer>
+            <key>minimum-product-version</key><string>2.2.1</string>
+            <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+            <key>minimum-product-version-description</key><string>This application requires the iPhone 2.2.1 Software Update</string>
+          </dict>
+        </array>
+      </dict>
+    </dict>
+    <key>url-page-type</key><string>software</string>
+    <key>bundle-id</key><string>com.rpatechnology.airmouse</string>
+    <key>artwork-urls</key>
+    <array>
+      <dict>
+        <key>box-height</key><integer>57</integer>
+        <key>needs-shine</key><true/>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r1000/035/Purple/b4/50/23/mzl.ukubdolc.png</string>
+        <key>box-width</key><integer>57</integer>
+      </dict>
+      <dict>
+        <key>box-height</key><integer>480</integer>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/11/0d/0c/mzl.wstjdkwn.480x480-75.jpg</string>
+        <key>box-width</key><integer>320</integer>
+      </dict>
+      <dict>
+        <key>image-type</key><string>software-icon</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><true/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/035/Purple/b4/50/23/mzl.ukubdolc.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>480</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/70/35/3a/mzl.ttyeineu.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/70/35/3a/mzl.ttyeineu.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>480</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/3f/5e/6b/mzl.xgvumrxh.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/3f/5e/6b/mzl.xgvumrxh.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>480</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/48/d3/bd/mzl.mrwhzwit.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/48/d3/bd/mzl.mrwhzwit.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+    </array>
+    <key>company</key>
+    <dict>
+      <key>title</key><string>R.P.A. Tech</string>
+      <key>url</key><string>http://www.mobileairmouse.com</string>
+    </dict>
+    <key>domains</key>
+    <array>
+    </array>
+    <key>description</key><string>** MAJOR SALE ** Don&#39;t miss this rare opportunity to get Mobile Air Mouse at a heavily discounted price
+
+Mobile Air Mouse instantly transforms your iPhone or iPod touch into an in air, wireless remote for your computer! Sit back and use this remote to surf the web, browse your photo library or control your music player from the comfort of your couch. Mobile Air Mouse uses the built in accelerometer to translate your hand motions into mouse movements on your screen. It can also operate as a trackpad remote, allowing you to control your computer with a single finger. Mobile Air Mouse is an essential part of any home theater PC and a presenter&#39;s best friend. Mobile Air Mouse uses an innovative application notification system to let the iPhone know what program you are running at any time and show the appropriate keys for that program. This allows Mobile Air Mouse to provide a single screen remote for controlling ALL your media and web applications.
+
+Features:
+- Accelerometer based mouse controller
+- Touchpad (full screen vertical and landscape modes)
+- Ability to hide keyboard (shake to hide/show)
+- Landscape keyboard (shake in landscape mode to show)
+- Media Remote
+- Web Remote
+- Application notifications
+- Remote keyboard with function and arrow keys
+- Programmable hotkeys (can be set to run a program or keyboard combination)
+- Scroll pad
+- Left and Right mouse buttons
+- Multitouch gestures (scroll &amp; right click)
+- Modifier Keys
+- On screen typing
+- Password protection
+- Custom sensitivity settings
+- Foreign language keyboards
+- Supports Bonjour or static IP
+- No screen size limitation. Works with multiple monitors.
+- Works over Bluetooth PAN. (Requires carrier support for Internet tethering. Not currently available in the US, please read FAQ for more info)
+- And much, much more. View our demo video to see all that Mobile Air Mouse can do for you
+
+Requirements:
+- Mac OS X 10.4 or above (Intel/PPC)
+- Windows XP/Vista 32/64bit
+- WIFI router (works best on a local area network or Ad hoc network)
+- Air Mouse Server Software
+
+** BEFORE YOU RUN THE SOFTWARE ** you will need to download the server application from :
+
+http://www.mobileairmouse.com
+
+** IMPORTANT ** IF YOU HAVE ANY PROBLEMS AT ALL, PLEASE EMAIL US: SUPPORT@MOBILEAIRMOUSE.COM AND WE WILL HELP YOU. We can not respond to reviews, so posting your questions there will not get you an answer. None of the reviewers saying that our app doesn&#39;t work ever contacted us for help.
+
+Visit our site for demos and setup instructions.
+
+Provides remote control capabilities for programs like iTunes, VLC, Front Row, Windows Media Center, WinAmp, Firefox, Safari, boxee, PowerPoint, Keynote, and much more!</string>
+    <key>view-user-reviews-url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id=289616509</string>
+    <key>version</key><string>1.5.5 (iPhone OS 3.0 Tested)</string>
+    <key>version-external-identifier</key><integer>1879173</integer>
+    <key>version-external-identifiers</key>
+    <array>
+      <integer>269962</integer>
+      <integer>580562</integer>
+      <integer>1418333</integer>
+      <integer>1458265</integer>
+      <integer>1492602</integer>
+      <integer>1770775</integer>
+      <integer>1809781</integer>
+      <integer>1879173</integer>
+    </array>
+  </dict>
+</dict>
+</plist>

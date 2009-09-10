@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>page-type</key>
+  <dict>
+    <key>template-name</key><string>search</string>
+    <key>template-parameters</key>
+    <dict>
+    </dict>
+  </dict>
+  <key>title</key><string>Search</string>
+  <key>store-version</key><string>1.0</string>
+  <key>store-client-application</key><string>Software</string>
+  <key>pings</key>
+  <array>
+    <string>http://metrics.apple.com/b/ss/applesuperglobal/1/G.6--NS?pccr=true&amp;ch=App%20Store-Search&amp;g=http%3A%2F%2Fax.search.itunes.apple.com%2FWebObjects%2FMZSearch.woa%2Fwa%2Fsearch%3Fmedia%3Dsoftware%26term%3Dremote&amp;pageName=App%20Store-Search%20Results%20Page-US&amp;v2=remote&amp;h5=appleitmsnaapmb%2Cappleitmsusapmb&amp;c2=remote</string>
+  </array>
+  <key>items</key>
+  <array>
+    <dict>
+      <key>type</key><string>link</string>
+      <key>title</key><string>Remote</string>
+      <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=284417350&amp;mt=8</string>
+      <key>url-page-type</key><string>software</string>
+      <key>artwork-urls</key>
+      <array>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/053/Purple/c6/e0/62/mzl.oraumssd.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+      </array>
+      <key>title2</key><string>17330 Ratings</string>
+      <key>link-type</key><string>software</string>
+      <key>item-id</key><integer>284417350</integer>
+      <key>artist-name</key><string>Apple Inc.</string>
+      <key>user-rating-count-string</key><string>17330 Ratings</string>
+      <key>user-rating-count</key><integer>17330</integer>
+      <key>average-user-rating</key><real>0.69</real>
+      <key>bundle-id</key><string>com.apple.Remote</string>
+      <key>store-offers</key>
+      <dict>
+        <key>STDQ</key>
+        <dict>
+          <key>action-display-name</key><string>INSTALL</string>
+          <key>price</key><real>0.00000</real>
+          <key>price-display</key><string>FREE</string>
+          <key>size</key><integer>1502214</integer>
+          <key>supported-devices</key>
+          <array>
+            <integer>1</integer>
+          </array>
+          <key>supported-device-types</key>
+          <array>
+            <dict>
+              <key>device-type-id</key><integer>1</integer>
+              <key>minimum-product-version</key><string>2.2</string>
+              <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+              <key>minimum-product-version-description</key><string>This application requires the iPhone 2.2 Software Update</string>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+      <key>release-date</key><date>2009-06-24T07:00:00Z</date>
+      <key>version</key><string>1.3 (iPhone OS 3.0 Tested)</string>
+      <key>version-external-identifier</key><integer>1804602</integer>
+      <key>version-external-identifiers</key>
+      <array>
+        <integer>16751</integer>
+        <integer>333381</integer>
+        <integer>1060761</integer>
+        <integer>1484391</integer>
+        <integer>1595351</integer>
+        <integer>1804602</integer>
+      </array>
+    </dict>
+    <dict>
+      <key>type</key><string>link</string>
+      <key>title</key><string>Air Mouse Pro  (Remote / Trackpad)</string>
+      <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=289616509&amp;mt=8</string>
+      <key>url-page-type</key><string>software</string>
+      <key>artwork-urls</key>
+      <array>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><true/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/035/Purple/b4/50/23/mzl.ukubdolc.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+      </array>
+      <key>title2</key><string>294 Ratings</string>
+      <key>link-type</key><string>software</string>
+      <key>item-id</key><integer>289616509</integer>
+      <key>artist-name</key><string>R.P.A. Tech</string>
+      <key>user-rating-count-string</key><string>294 Ratings</string>
+      <key>user-rating-count</key><integer>294</integer>
+      <key>average-user-rating</key><real>0.78</real>
+      <key>bundle-id</key><string>com.rpatechnology.airmouse</string>
+      <key>store-offers</key>
+      <dict>
+        <key>STDQ</key>
+        <dict>
+          <key>action-display-name</key><string>BUY NOW</string>
+          <key>price</key><real>2.99000</real>
+          <key>price-display</key><string>$2.99</string>
+          <key>size</key><integer>695004</integer>
+          <key>supported-devices</key>
+          <array>
+            <integer>1</integer>
+          </array>
+          <key>supported-device-types</key>
+          <array>
+            <dict>
+              <key>device-type-id</key><integer>1</integer>
+              <key>minimum-product-version</key><string>2.2.1</string>
+              <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+              <key>minimum-product-version-description</key><string>This application requires the iPhone 2.2.1 Software Update</string>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+      <key>release-date</key><date>2009-08-18T07:00:00Z</date>
+      <key>version</key><string>1.5.5 (iPhone OS 3.0 Tested)</string>
+      <key>version-external-identifier</key><integer>1879173</integer>
+      <key>version-external-identifiers</key>
+      <array>
+        <integer>269962</integer>
+        <integer>580562</integer>
+        <integer>1418333</integer>
+        <integer>1458265</integer>
+        <integer>1492602</integer>
+        <integer>1770775</integer>
+        <integer>1809781</integer>
+        <integer>1879173</integer>
+      </array>
+    </dict>
+    <dict>
+      <key>type</key><string>link</string>
+      <key>title</key><string>Keynote Remote</string>
+      <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=300719251&amp;mt=8</string>
+      <key>url-page-type</key><string>software</string>
+      <key>artwork-urls</key>
+      <array>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/0e/db/31/mzl.ezrtalgi.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+      </array>
+      <key>title2</key><string>717 Ratings</string>
+      <key>link-type</key><string>software</string>
+      <key>item-id</key><integer>300719251</integer>
+      <key>artist-name</key><string>Apple Inc.</string>
+      <key>user-rating-count-string</key><string>717 Ratings</string>
+      <key>user-rating-count</key><integer>717</integer>
+      <key>average-user-rating</key><real>0.76</real>
+      <key>bundle-id</key><string>com.apple.iwork.KeynoteRemote</string>
+      <key>store-offers</key>
+      <dict>
+        <key>STDQ</key>
+        <dict>
+          <key>action-display-name</key><string>BUY NOW</string>
+          <key>price</key><real>0.99000</real>
+          <key>price-display</key><string>$0.99</string>
+          <key>size</key><integer>475438</integer>
+          <key>supported-devices</key>
+          <array>
+            <integer>1</integer>
+          </array>
+          <key>supported-device-types</key>
+          <array>
+            <dict>
+              <key>device-type-id</key><integer>1</integer>
+              <key>minimum-product-version</key><string>2.0</string>
+              <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+              <key>minimum-product-version-description</key><string>This application requires the iPhone 2.0 Software Update</string>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+      <key>release-date</key><date>2009-03-26T07:00:00Z</date>
+      <key>version</key><string>1.1</string>
+      <key>version-external-identifier</key><integer>1562781</integer>
+      <key>version-external-identifiers</key>
+      <array>
+        <integer>1418382</integer>
+        <integer>1562781</integer>
+      </array>
+    </dict>
+    <dict>
+      <key>type</key><string>link</string>
+      <key>title</key><string>DSLR Camera Remote Professional Edition</string>
+      <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=316771002&amp;mt=8</string>
+      <key>url-page-type</key><string>software</string>
+      <key>artwork-urls</key>
+      <array>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><true/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/011/Purple/ba/e8/d4/mzl.mvvaiprg.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+      </array>
+      <key>title2</key><string>27 Ratings</string>
+      <key>link-type</key><string>software</string>
+      <key>item-id</key><integer>316771002</integer>
+      <key>artist-name</key><string>onOne Software</string>
+      <key>user-rating-count-string</key><string>27 Ratings</string>
+      <key>user-rating-count</key><integer>27</integer>
+      <key>average-user-rating</key><real>0.72</real>
+      <key>bundle-id</key><string>com.ononesoftware.dslrremote</string>
+      <key>store-offers</key>
+      <dict>
+        <key>STDQ</key>
+        <dict>
+          <key>action-display-name</key><string>BUY NOW</string>
+          <key>price</key><real>19.99000</real>
+          <key>price-display</key><string>$19.99</string>
+          <key>size</key><integer>741197</integer>
+          <key>supported-devices</key>
+          <array>
+            <integer>1</integer>
+          </array>
+          <key>supported-device-types</key>
+          <array>
+            <dict>
+              <key>device-type-id</key><integer>1</integer>
+              <key>minimum-product-version</key><string>2.2.1</string>
+              <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+              <key>minimum-product-version-description</key><string>This application requires the iPhone 2.2.1 Software Update</string>
+            </dict>
+          </array>
+        </dict>
+      </dict>
+      <key>release-date</key><date>2009-05-15T07:00:00Z</date>
+      <key>version</key><string>1.1.0 (iPhone OS 3.0 Tested)</string>
+      <key>version-external-identifier</key><integer>1890047</integer>
+      <key>version-external-identifiers</key>
+      <array>
+        <integer>1712902</integer>
+        <integer>1890047</integer>
+      </array>
+    </dict>
+    <dict>
+      <key>type</key><string>more</string>
+      <key>title</key><string>Show 25 More</string>
+      <key>url</key><string>http://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?startIndex=24&amp;entity=software&amp;term=remote&amp;media=software&amp;displayIndex=24</string>
+      <key>total-items</key><integer>468</integer>
+    </dict>
+  </array>
+</dict>
+</plist>

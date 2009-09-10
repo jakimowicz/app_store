@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>page-type</key>
+  <dict>
+    <key>template-name</key><string>software</string>
+    <key>template-parameters</key>
+    <dict>
+    </dict>
+  </dict>
+  <key>title</key><string>Info</string>
+  <key>store-version</key><string>1.0</string>
+  <key>store-client-application</key><string>Software</string>
+  <key>pings</key>
+  <array>
+    <string>http://metrics.apple.com/b/ss/applesuperglobal/1/G.6--NS?h5=appleitmsnaapmb%2Cappleitmsusapmb&amp;pccr=true&amp;pageName=App%20Store-Software%20Page-US-Remote-284417350-Apple%20Inc.&amp;ch=App%20Store-Software%20Page&amp;g=http%3A%2F%2Fax.itunes.apple.com%2FWebObjects%2FMZStore.woa%2Fwa%2FviewSoftware%3Fid%3D284417350</string>
+  </array>
+  <key>item-metadata</key>
+  <dict>
+    <key>type</key><string>software</string>
+    <key>title</key><string>Remote</string>
+    <key>item-id</key><integer>284417350</integer>
+    <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=284417350&amp;mt=8</string>
+    <key>release-date</key><date>2009-06-24T07:00:00Z</date>
+    <key>user-rating-count</key><integer>17330</integer>
+    <key>average-user-rating</key><real>0.69</real>
+    <key>title2</key><string>17330 Ratings</string>
+    <key>user-rating-count-string</key><string>17330 Ratings</string>
+    <key>rating</key>
+    <dict>
+      <key>system</key><string>itunes-games</string>
+      <key>rank</key><integer>100</integer>
+      <key>label</key><string>4+</string>
+      <key>description</key><string></string>
+      <key>advisory-array</key>
+      <array>
+      </array>
+    </dict>
+    <key>store-offers</key>
+    <dict>
+      <key>STDQ</key>
+      <dict>
+        <key>action-params</key><string>productType=C&amp;salableAdamId=284417350&amp;pricingParameters=STDQ&amp;price=0&amp;ct-id=14</string>
+        <key>action-display-name</key><string>INSTALL</string>
+        <key>price</key><real>0.00000</real>
+        <key>price-display</key><string>FREE</string>
+        <key>size</key><integer>1502214</integer>
+        <key>supported-devices</key>
+        <array>
+          <integer>1</integer>
+        </array>
+        <key>supported-device-types</key>
+        <array>
+          <dict>
+            <key>device-type-id</key><integer>1</integer>
+            <key>minimum-product-version</key><string>2.2</string>
+            <key>minimum-product-version-title</key><string>Application Not Compatible</string>
+            <key>minimum-product-version-description</key><string>This application requires the iPhone 2.2 Software Update</string>
+          </dict>
+        </array>
+      </dict>
+    </dict>
+    <key>url-page-type</key><string>software</string>
+    <key>bundle-id</key><string>com.apple.Remote</string>
+    <key>artwork-urls</key>
+    <array>
+      <dict>
+        <key>box-height</key><integer>57</integer>
+        <key>needs-shine</key><false/>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r1000/053/Purple/c6/e0/62/mzl.oraumssd.png</string>
+        <key>box-width</key><integer>57</integer>
+      </dict>
+      <dict>
+        <key>box-height</key><integer>460</integer>
+        <key>url</key><string>http://a1.phobos.apple.com/us/r30/Purple/d7/72/58/mzl.bdepscff.480x480-75.jpg</string>
+        <key>box-width</key><integer>320</integer>
+      </dict>
+      <dict>
+        <key>image-type</key><string>software-icon</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>57</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/053/Purple/c6/e0/62/mzl.oraumssd.png</string>
+          <key>box-width</key><integer>57</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>460</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/010/Purple/df/fa/6a/mzl.imkwfbtt.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/010/Purple/df/fa/6a/mzl.imkwfbtt.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>460</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/059/Purple/d5/d4/6a/mzl.bxwpcthi.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/059/Purple/d5/d4/6a/mzl.bxwpcthi.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>460</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/002/Purple/d3/9c/76/mzl.uprsqgec.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/002/Purple/d3/9c/76/mzl.uprsqgec.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+      <dict>
+        <key>image-type</key><string>screenshot</string>
+        <key>default</key>
+        <dict>
+          <key>box-height</key><integer>480</integer>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/021/Purple/df/24/ec/mzl.zruibcdp.480x480-75.jpg</string>
+          <key>box-width</key><integer>320</integer>
+        </dict>
+        <key>thumbnail</key>
+        <dict>
+          <key>box-height</key><integer>99</integer>
+          <key>needs-shine</key><false/>
+          <key>url</key><string>http://a1.phobos.apple.com/us/r1000/021/Purple/df/24/ec/mzl.zruibcdp.148x99-75.jpg</string>
+          <key>box-width</key><integer>148</integer>
+        </dict>
+        <key>url</key><string></string>
+      </dict>
+    </array>
+    <key>company</key>
+    <dict>
+      <key>title</key><string>Apple Inc.</string>
+      <key>url</key><string>http://www.apple.com/itunes/remote</string>
+    </dict>
+    <key>domains</key>
+    <array>
+    </array>
+    <key>description</key><string>With Remote you can control the music on your computer or Apple TV from your iPod touch or iPhone.
+
+Play, pause, skip, shuffle. See your songs, playlists, and album art on your iPod touch or iPhone as if you were right in front of your computer.
+
+Remote works with your Wi-Fi network, so you can control
+playback from anywhere in and around your home.
+
+FEATURES
+
+- Control the music on iTunes or Apple TV
+- See the album artwork on your Remote
+- Create and update Genius playlists
+- Edit playlists in iTunes
+- Search your whole iTunes library
+- Control your AirTunes speakers
+
+</string>
+    <key>developers-eula</key>
+    <dict>
+      <key>type</key><string>link</string>
+      <key>title</key><string>Remote - License Agreement</string>
+      <key>url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewEula?id=284417350</string>
+      <key>url-page-type</key><string>eula</string>
+    </dict>
+    <key>view-user-reviews-url</key><string>http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id=284417350</string>
+    <key>version</key><string>1.3 (iPhone OS 3.0 Tested)</string>
+    <key>version-external-identifier</key><integer>1804602</integer>
+    <key>version-external-identifiers</key>
+    <array>
+      <integer>16751</integer>
+      <integer>333381</integer>
+      <integer>1060761</integer>
+      <integer>1484391</integer>
+      <integer>1595351</integer>
+      <integer>1804602</integer>
+    </array>
+  </dict>
+</dict>
+</plist>
