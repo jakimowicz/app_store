@@ -20,7 +20,7 @@ module AppStore::Caller
     # If you omit the language, the default one for the store is used.
     # Return format can be either "1" or "2" : "1" returns data to be directly displayed and "2" is a more structured format.
     answer = agent.get(:url => url, :headers => {"X-Apple-Store-Front" => '143441,2'}, :params => params)
-    raise AppStore::RequestError if answer.code != '200'
+    raise AppStore::RequestError if answer.code.to_s != '200'
     Plist::parse_xml answer.body
   end
   

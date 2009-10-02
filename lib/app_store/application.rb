@@ -1,6 +1,7 @@
 require "app_store/base"
 require "app_store/company"
 require "app_store/user_review"
+require "app_store/artwork"
 
 # Represents an application in the AppStore.
 # Available attributes:
@@ -8,14 +9,16 @@ require "app_store/user_review"
 # * <tt>user_rating_count</tt>: user_reviews count.
 # * <tt>release_date</tt>: release date on the AppStore for the application.
 # * <tt>description</tt>: application description.
+# * <tt>screenshots</tt>: array of Image objects for screenshots.
 # * <tt>item_id</tt>: application id.
 # * <tt>version</tt>: application version.
-# * <tt>title</tt>: application title.
 # * <tt>company</tt>: a Company object, the one which submit the application.
+# * <tt>title</tt>: application title.
 # * <tt>price</tt>: price of the application on the Apple AppStore.
+# * <tt>icon</tt>: Image object of the application icon.
 # * <tt>size</tt>: size of the application in byte.
 class AppStore::Application < AppStore::Base
-  attr_reader :company, :price, :size
+  attr_reader :company, :price, :size, :artworks, :icon, :screenshots
   
   plist :accepted_type => 'software',
     :mapping => {
@@ -42,6 +45,11 @@ class AppStore::Application < AppStore::Base
     plist['items'].collect { |item| find_by_id item['item-id'] } rescue []
   end
   
+  def initialize(attrs = {})
+    @screenshots ||= []
+    super
+  end
+  
   # Returns an array of UserReview objects.
   def user_reviews
     if @user_reviews.nil?
@@ -54,9 +62,22 @@ class AppStore::Application < AppStore::Base
   
   protected
   def custom_init_from_plist(plist)
+    # Set size and price
     @price  = plist['store-offers']['STDQ']['price']
     @size   = plist['store-offers']['STDQ']['size']
     
-    @company = AppStore::Company.new(:plist => plist['company'])
+    # Seek for company
+    @company  = AppStore::Company.new(:plist => plist['company'])
+    
+    # Parse artwork
+    @artworks = plist['artwork-urls'].collect do |plist_artwork|
+      if plist_artwork['image-type'] and plist_artwork['default']
+        artwork = AppStore::Artwork.new :plist => plist_artwork
+        @icon ||= artwork.default if artwork.is_icon?
+        @screenshots << artwork.default unless artwork.is_icon?
+        artwork
+      end
+    end
+    @artworks.compact!
   end
 end

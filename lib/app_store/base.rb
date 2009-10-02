@@ -3,6 +3,8 @@ require "app_store/helpers/plist"
 
 # Implements basic operations for AppStore objects : initialization, plist parsing, ...
 class AppStore::Base
+  attr_reader :raw
+  
   extend AppStore::Helper::Plist
   
   # Instanciate a new object.
