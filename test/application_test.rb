@@ -13,6 +13,7 @@ class ApplicationTest < Test::Unit::TestCase
             'size'  => 101010
           }
         },
+        'artwork-urls' => [],
         'company' => {
           'url'   => 'http://www.google.com',
           'title' => 'Google'
@@ -80,6 +81,16 @@ class ApplicationTest < Test::Unit::TestCase
         assert_equal 4, @list.length
       end
             
+    end
+    
+    context "load application 316771002" do
+      setup do
+        @app = AppStore::Application.find_by_id(316771002)
+      end
+      
+      should "should have 4 artworks" do
+        assert_equal 4, @app.artworks.count
+      end
     end
   end
 end
