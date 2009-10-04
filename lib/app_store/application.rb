@@ -71,6 +71,7 @@ class AppStore::Application < AppStore::Base
     
     # Parse artwork
     @artworks = plist['artwork-urls'].collect do |plist_artwork|
+      # OPTIMIZE : handle default_screenshot
       if plist_artwork['image-type'] and plist_artwork['default']
         artwork = AppStore::Artwork.new :plist => plist_artwork
         @icon ||= artwork.default if artwork.is_icon?

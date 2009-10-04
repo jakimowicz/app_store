@@ -13,7 +13,78 @@ class ApplicationTest < Test::Unit::TestCase
             'size'  => 101010
           }
         },
-        'artwork-urls' => [],
+        'artwork-urls' => [
+          { "box-height"  => 57,
+            "url"         => "http://a1.phobos.apple.com/us/r1000/058/Purple/c6/e0/62/mzl.eillqyke.png",
+            "box-width"   => 57,
+            "needs-shine" => false },
+            
+          { "box-height"  => 460,
+            "url"         => "http://a1.phobos.apple.com/us/r1000/009/Purple/d7/72/58/mzl.yridpiqv.480x480-75.jpg",
+            "box-width"   => 320 },
+            
+          { "default"      => {
+              "box-height"  => 57,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/058/Purple/c6/e0/62/mzl.eillqyke.png",
+              "box-width"   => 57,
+              "needs-shine" => false
+            },
+            "image-type"  => "software-icon",
+            "url"         => "" },
+            
+          { "thumbnail"   => {
+              "box-height"  => 99,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/037/Purple/df/fa/6a/mzl.mlprrfol.148x99-75.jpg",
+              "box-width"   => 148,
+              "needs-shine" => false
+            },
+            "default"     => {
+              "box-height"  => 460,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/037/Purple/df/fa/6a/mzl.mlprrfol.480x480-75.jpg",
+              "box-width"   => 320
+            },
+            "image-type"  => "screenshot",
+            "url"         => "" },
+          { "thumbnail"   => {
+              "box-height"  => 99,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/058/Purple/d5/d4/6a/mzl.zmpdhenu.148x99-75.jpg",
+              "box-width"   => 148,
+              "needs-shine" => false
+            },
+            "default" => {
+              "box-height"  => 460,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/058/Purple/d5/d4/6a/mzl.zmpdhenu.480x480-75.jpg",
+              "box-width"   => 320
+            },
+            "image-type"  => "screenshot",
+            "url"         => "" },
+          { "thumbnail"   => {
+              "box-height"  => 99,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/029/Purple/d3/9c/76/mzl.xgeoazvu.148x99-75.jpg",
+              "box-width"   => 148,
+              "needs-shine" => false
+            },
+            "default" =>  {
+              "box-height"  => 460,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/029/Purple/d3/9c/76/mzl.xgeoazvu.480x480-75.jpg",
+              "box-width"   => 320
+            },
+            "image-type"  => "screenshot",
+            "url"         => "" },
+          { "thumbnail" => {
+              "box-height"  => 99,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/038/Purple/df/24/ec/mzl.ktobakku.148x99-75.jpg",
+              "box-width"   => 148,
+              "needs-shine" => false
+            },
+            "default" => {
+              "box-height"  => 480,
+              "url"         => "http://a1.phobos.apple.com/us/r1000/038/Purple/df/24/ec/mzl.ktobakku.480x480-75.jpg",
+              "box-width"   => 320
+            },
+            "image-type"  => "screenshot",
+            "url"         => "" }
+        ],
         'company' => {
           'url'   => 'http://www.google.com',
           'title' => 'Google'
@@ -33,6 +104,19 @@ class ApplicationTest < Test::Unit::TestCase
     should "set company correctly on initialization from plist" do
       assert_equal 'http://www.google.com', @app.company.url
       assert_equal 'Google', @app.company.title
+    end
+    
+    should "have 5 artworks" do
+      assert_equal 5, @app.artworks.count
+    end
+    
+    should "have a software icon" do
+      assert_not_nil @app.icon
+      assert_kind_of AppStore::Image, @app.icon
+    end
+    
+    should "have 4 screenshots" do
+      assert_equal 4, @app.screenshots.count
     end
   end
   
