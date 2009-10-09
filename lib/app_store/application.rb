@@ -2,6 +2,7 @@ require "app_store/base"
 require "app_store/company"
 require "app_store/user_review"
 require "app_store/artwork"
+require "app_store/list"
 
 # Represents an application in the AppStore.
 # Available attributes:
@@ -54,8 +55,11 @@ class AppStore::Application < AppStore::Base
   def user_reviews
     if @user_reviews.nil?
       plist = AppStore::Caller.get(@raw['view-user-reviews-url'])
-      reviews = plist['items'].select { |item| item['type'] == 'review' }
-      @user_reviews = reviews.collect { |review| AppStore::UserReview.new :plist => review }
+      @user_reviews = List.new( :element_initializer  => lambda {|element| AppStore::UserReview.new :plist => element},
+                                :element_type         => 'review',
+                                :list => plist['items'] )
+      # reviews = plist['items'].select { |item| item['type'] == 'review' }
+      # @user_reviews = reviews.collect { |review| AppStore::UserReview.new :plist => review }
     end
     @user_reviews
   end
