@@ -1,9 +1,11 @@
+require 'app_store'
+
 # Represents a list based on data from Apple AppStore.
 # If a list contains too much elements (> 25), the Apple AppStore
 # sends only 24 elements followed by a link for the next 24 elements.
 # This class represents an abstraction of Apple AppStore lists, have
 # a real count attribute and is enumerable over the entire list.
-class List
+class AppStore::List
   include Enumerable
   
   # All the elements already gathered.

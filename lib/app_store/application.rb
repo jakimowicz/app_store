@@ -55,11 +55,9 @@ class AppStore::Application < AppStore::Base
   def user_reviews
     if @user_reviews.nil?
       plist = AppStore::Caller.get(@raw['view-user-reviews-url'])
-      @user_reviews = List.new( :element_initializer  => lambda {|element| AppStore::UserReview.new :plist => element},
-                                :element_type         => 'review',
-                                :list => plist['items'] )
-      # reviews = plist['items'].select { |item| item['type'] == 'review' }
-      # @user_reviews = reviews.collect { |review| AppStore::UserReview.new :plist => review }
+      @user_reviews = AppStore::List.new( :element_initializer  => lambda {|element| AppStore::UserReview.new :plist => element},
+                                          :element_type         => 'review',
+                                          :list => plist['items'] )
     end
     @user_reviews
   end
