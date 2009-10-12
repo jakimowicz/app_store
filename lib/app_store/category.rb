@@ -25,13 +25,13 @@ class AppStore::Category < AppStore::Base
   def items
     if @items.nil?
       plist = AppStore::Caller.get(@raw['url'])
-      @items = plist['items'].collect do |item|
-        if item['link-type'] == 'software'
-          AppStore::Application.find_by_id(item['item-id'])
-        else
-          AppStore::Category.new(:plist => item)
-        end
-      end
+      @items = AppStore::List.new(
+        :list                 => plist['items'],
+        :element_type         => 'link',
+        :element_initializer  => lambda {|element|
+          (element['link-type'] == 'software' ? AppStore::Link : AppStore::Category).new(:plist => element)
+        }
+      )
     end
     @items
   end

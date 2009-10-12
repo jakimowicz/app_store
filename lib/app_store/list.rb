@@ -59,11 +59,21 @@ class AppStore::List
     
     new_elements.each do |element|
       case element['type']
+      when @element_type
+        result << initialize_element_and_append(element)
+      when 'software'
+        result << append_element(AppStore::Application.new(:plist => element))
+      when 'review'
+        result << append_element(AppStore::UserReview.new(:plist => element))
+      when 'link'
+        result << append_element(AppStore::Link.new(:plist => element))
       when 'more'
         @count                  = element['total-items']
         @link_to_next_elements  = element['url']
-      when @element_type
-        result << initialize_element_and_append(element)
+      when 'review-header'
+        ;
+      else
+        raise "unsupported type" unless @element_initializer
       end
     end
     
@@ -73,8 +83,11 @@ class AppStore::List
   # Initialize given <tt>element</tt> using @element_initializer block if given,
   # append block execution result to @elements and return it.
   def initialize_element_and_append(element)
-    result = @element_initializer[element]
-    @elements << result
-    result
+    append_element @element_initializer[element]
+  end  
+  
+  def append_element(element)
+    @elements << element
+    element
   end
 end

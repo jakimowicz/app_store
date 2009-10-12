@@ -44,9 +44,7 @@ class AppStore::Application < AppStore::Base
   # Returns an array with matching application or an empty array if no result found.
   def self.search(text)
     plist = AppStore::Caller.get(AppStore::Caller::SearchURL, :media => 'software', :term => text)
-    AppStore::List.new( :element_initializer  => lambda {|element| AppStore::Link.new :plist => element},
-                        :element_type         => 'link',
-                        :list                 => plist['items'] )
+    AppStore::List.new :list => plist['items']
   end
   
   def initialize(attrs = {})
@@ -58,9 +56,7 @@ class AppStore::Application < AppStore::Base
   def user_reviews
     if @user_reviews.nil?
       plist = AppStore::Caller.get(@raw['view-user-reviews-url'])
-      @user_reviews = AppStore::List.new( :element_initializer  => lambda {|element| AppStore::UserReview.new :plist => element},
-                                          :element_type         => 'review',
-                                          :list => plist['items'] )
+      @user_reviews = AppStore::List.new(:list => plist['items'])
     end
     @user_reviews
   end
