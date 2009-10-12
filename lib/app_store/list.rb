@@ -1,9 +1,11 @@
+require 'app_store'
+
 # Represents a list based on data from Apple AppStore.
 # If a list contains too much elements (> 25), the Apple AppStore
 # sends only 24 elements followed by a link for the next 24 elements.
 # This class represents an abstraction of Apple AppStore lists, have
 # a real count attribute and is enumerable over the entire list.
-class List
+class AppStore::List
   include Enumerable
   
   # All the elements already gathered.
@@ -54,14 +56,25 @@ class List
   
   def process_new_elements(new_elements)
     result = []
+    @link_to_next_elements = nil
     
     new_elements.each do |element|
       case element['type']
+      when @element_type
+        result << initialize_element_and_append(element)
+      when 'software'
+        result << append_element(AppStore::Application.new(:plist => element))
+      when 'review'
+        result << append_element(AppStore::UserReview.new(:plist => element))
+      when 'link'
+        result << append_element(AppStore::Link.new(:plist => element))
       when 'more'
         @count                  = element['total-items']
         @link_to_next_elements  = element['url']
-      when @element_type
-        result << initialize_element_and_append(element)
+      when 'review-header'
+        ;
+      else
+        raise "unsupported type" unless @element_initializer
       end
     end
     
@@ -71,8 +84,11 @@ class List
   # Initialize given <tt>element</tt> using @element_initializer block if given,
   # append block execution result to @elements and return it.
   def initialize_element_and_append(element)
-    result = @element_initializer[element]
-    @elements << result
-    result
+    append_element @element_initializer[element]
+  end  
+  
+  def append_element(element)
+    @elements << element
+    element
   end
 end
