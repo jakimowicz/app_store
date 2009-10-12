@@ -3,6 +3,7 @@ require "app_store/company"
 require "app_store/user_review"
 require "app_store/artwork"
 require "app_store/list"
+require "app_store/link"
 
 # Represents an application in the AppStore.
 # Available attributes:
@@ -43,7 +44,9 @@ class AppStore::Application < AppStore::Base
   # Returns an array with matching application or an empty array if no result found.
   def self.search(text)
     plist = AppStore::Caller.get(AppStore::Caller::SearchURL, :media => 'software', :term => text)
-    plist['items'].collect { |item| find_by_id item['item-id'] } rescue []
+    AppStore::List.new( :element_initializer  => lambda {|element| AppStore::Link.new :plist => element},
+                        :element_type         => 'link',
+                        :list                 => plist['items'] )
   end
   
   def initialize(attrs = {})
