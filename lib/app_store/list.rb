@@ -56,6 +56,7 @@ class AppStore::List
   
   def process_new_elements(new_elements)
     result = []
+    @link_to_next_elements = nil
     
     new_elements.each do |element|
       case element['type']
