@@ -22,7 +22,7 @@ require "app_store/link"
 class AppStore::Application < AppStore::Base
   ApplicationURL        = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware"
   
-  attr_reader :company, :price, :size, :artworks, :icon, :screenshots
+  attr_reader :company, :price, :size, :artworks, :icon, :icon_thumbnail, :screenshots
   
   plist :accepted_type => 'software',
     :mapping => {
@@ -67,6 +67,15 @@ class AppStore::Application < AppStore::Base
     "#{ApplicationURL}?id=#{item_id}"
   end
   
+  def icon
+    if @icon.nil?
+      parsed = AppStore::Caller.itunes_get(AppStore::Caller::ApplicationURL, :id => item_id)
+      @icon = AppStore::Image.new(:plist => parsed.search('PictureView[@height="100"][@width="100"]').first)
+    end
+    
+    @icon
+  end
+  
   protected
   def custom_init_from_plist(plist)
     # Set size and price
@@ -81,7 +90,7 @@ class AppStore::Application < AppStore::Base
       # OPTIMIZE : handle default_screenshot
       if plist_artwork['image-type'] and plist_artwork['default']
         artwork = AppStore::Artwork.new :plist => plist_artwork
-        @icon ||= artwork.default if artwork.is_icon?
+        @icon_thumbnail ||= artwork.default if artwork.is_icon?
         @screenshots << artwork.default unless artwork.is_icon?
         artwork
       end
