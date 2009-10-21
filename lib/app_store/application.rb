@@ -20,6 +20,8 @@ require "app_store/link"
 # * <tt>icon</tt>: Image object of the application icon.
 # * <tt>size</tt>: size of the application in byte.
 class AppStore::Application < AppStore::Base
+  ApplicationURL        = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware"
+  
   attr_reader :company, :price, :size, :artworks, :icon, :screenshots
   
   plist :accepted_type => 'software',
@@ -59,6 +61,10 @@ class AppStore::Application < AppStore::Base
       @user_reviews = AppStore::List.new(:list => plist['items'])
     end
     @user_reviews
+  end
+  
+  def itunes_url
+    "#{ApplicationURL}?id=#{item_id}"
   end
   
   protected
