@@ -1,5 +1,6 @@
 require "app_store/base"
 require "app_store/application"
+require 'pp'
 
 # A category like categories on the AppStore.
 # Available attributes:
@@ -16,6 +17,10 @@ class AppStore::Category < AppStore::Base
   def self.featured
     plist = AppStore::Caller.get(AppStore::Caller::FeaturedCategoriesURL)
     plist['items'].collect { |item| new :plist => item }
+  end
+  
+  def item_id
+    @item_id ||= @raw['url'].match("id=([0-9]+)")[1]
   end
   
   # Returns an array of items contained in the category, with a maximum of 25 items (Apple limitation).
