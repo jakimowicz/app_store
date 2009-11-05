@@ -19,6 +19,12 @@ class AppStore::Category < AppStore::Base
     plist['items'].collect { |item| new :plist => item }
   end
   
+  def self.find_by_id(id)
+    # TODO: pass item_id to new
+    category = new(:plist => AppStore::Caller.get(AppStore::Caller::CategoryURL, :id => id))
+  end
+  
+  # Returns id for this category
   def item_id
     @item_id ||= @raw['url'].match("id=([0-9]+)")[1]
   end
@@ -29,7 +35,7 @@ class AppStore::Category < AppStore::Base
   # Each element can be either a Category or an Application.
   def items
     if @items.nil?
-      plist = AppStore::Caller.get(@raw['url'])
+      plist = @raw['items'] ? @raw : AppStore::Caller.get(@raw['url'])
       @items = AppStore::List.new(
         :list                 => plist['items'],
         :element_type         => 'link',
