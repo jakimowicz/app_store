@@ -20,6 +20,9 @@ module AppStore::Caller
     # Format is XXXXXX-Y,Z where XXXXXX is the store number (us, french, ...), Y the language and Z the return format.
     # If you omit the language, the default one for the store is used.
     # Return format can be either "1" or "2" : "1" returns data to be directly displayed and "2" is a more structured format.
+    # apple app store codes:
+    # * 143441 : US
+    # * 143442 : FR
     answer = iphone_agent.get(:url => url, :headers => {"X-Apple-Store-Front" => '143441,2'}, :params => params)
     raise AppStore::RequestError if answer.code.to_s != '200'
     Plist::parse_xml answer.body
