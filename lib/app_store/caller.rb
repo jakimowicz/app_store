@@ -42,7 +42,7 @@ module AppStore::Caller
   end
   
   def itunes_agent
-    @itunes_agent ||= WWW::Mechanize.new
+    @itunes_agent ||= WWW::Mechanize.new { |a| a.user_agent = 'iTunes/9.0.1 (Macintosh; Intel Mac OS X 10.6.1) AppleWebKit/531.9' }
   end
 
 end
