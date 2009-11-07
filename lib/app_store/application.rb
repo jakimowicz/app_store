@@ -6,7 +6,7 @@ require "app_store/list"
 require "app_store/link"
 
 # Represents an application in the AppStore.
-# Available attributes:
+# = Available attributes:
 # * <tt>average_user_rating</tt>: average rating from all user_reviews.
 # * <tt>user_rating_count</tt>: user_reviews count.
 # * <tt>release_date</tt>: release date on the AppStore for the application.
@@ -19,6 +19,36 @@ require "app_store/link"
 # * <tt>price</tt>: price of the application on the Apple AppStore.
 # * <tt>icon</tt>: Image object of the application icon.
 # * <tt>size</tt>: size of the application in byte.
+# = Examples
+# === Simple search
+#    @applications = AppStore::Application.search('upnp')
+#    @applications.class            # => Array
+#    @applications.length           # => 8
+#    @applications.first.title      # => "PlugPlayer"
+#    @applications.first.price      # => 4.99
+# 
+# === Find an application by id
+#    @fontpicker = AppStore::Application.find_by_id(327076783)
+#    @fontpicker.class             # => AppStore::Application
+#    @fontpicker.title             # => "FontPicker"
+#    @fontpicker.price             # => 0.0
+#    @fontpicker.company.title     # => "Etienne Segonzac"
+# 
+# === Medias
+#   @fontpicker.screenshots           # => [#<AppStore::Image:0x1017683e0 @width=320, @ra ...
+#   @fontpicker.screenshots.first.url # => "http://a1.phobos.apple.com/us/r1000/017/Purple/c4/99/6d/mzl.jtoxfers.480x480-75.jpg"
+#   @fontpicker.icon.url							# => "http://a1.phobos.apple.com/us/r1000/026/Purple/39/40/54/mzl.yrrhymuu.100x100-75.jpg"
+#
+# === User reviews
+#    @remote = AppStore::Application.find_by_id(284417350)
+#    @remote.title                # => "Remote"
+#    @remote.user_reviews.length  # => 10
+# 
+#    @review = @remote.user_reviews.first
+# 
+#    @review.user_name            # => "Ebolavoodoo on Aug 27, 2009"
+#    @review.average_user_rating  # => 1.0
+#    @review.text                 # => "Simply amazing. My new favorite app. Instantly responds. Easy to navigate and control. For those who say it doesn't work. Stinks to be you."
 class AppStore::Application < AppStore::Base
   ApplicationURL        = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware"
   

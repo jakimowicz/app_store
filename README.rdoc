@@ -13,12 +13,17 @@ It provides way to search for applications, navigate through categories.
    @applications.first.title      # => "PlugPlayer"
    @applications.first.price      # => 4.99
 
-* Find an application by its id
+* Find an application by id
    @fontpicker = AppStore::Application.find_by_id(327076783)
    @fontpicker.class             # => AppStore::Application
    @fontpicker.title             # => "FontPicker"
    @fontpicker.price             # => 0.0
    @fontpicker.company.title     # => "Etienne Segonzac"
+
+* Medias
+	@fontpicker.screenshots				 		# => [#<AppStore::Image:0x1017683e0 @width=320, @ra ...
+	@fontpicker.screenshots.first.url	# => "http://a1.phobos.apple.com/us/r1000/017/Purple/c4/99/6d/mzl.jtoxfers.480x480-75.jpg"
+	@fontpicker.icon.url							# => "http://a1.phobos.apple.com/us/r1000/026/Purple/39/40/54/mzl.yrrhymuu.100x100-75.jpg"
 
 * User reviews
    @remote = AppStore::Application.find_by_id(284417350)
@@ -59,10 +64,12 @@ It provides way to search for applications, navigate through categories.
 == INSTALL
   gem install app_store
 
+== DOCUMENTATION
+
+* http://rdoc.info/projects/jakimowicz/app_store/
+
+
 == TODO
-* handle medias (screenshots, icons, ...)
-* optimize navigation through lists
-* handle 'links' to avoid calling AppStore API for each items in a list
 * use FakeMechanize to unit test each calls
 * handle multiple store/language
 
