@@ -67,7 +67,7 @@ class AppStore::Application < AppStore::Base
   
   # Search an Application by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns an Application instance.
   def self.find_by_id(id, options = {})
-    caller = options[:caller] || AppStore::Caller
+    caller = options[:caller] || AppStore::Caller.new
     plist = caller.get(AppStore::Caller::ApplicationURL, :id => id)
     # TODO : Check if everything was right before instancianting
     new :caller => caller, :plist => plist['item-metadata']
@@ -76,7 +76,7 @@ class AppStore::Application < AppStore::Base
   # Search an Application by a <tt>text</tt>.
   # Returns an array with matching application or an empty array if no result found.
   def self.search(text, options = {})
-    caller = options[:caller] || AppStore::Caller
+    caller = options[:caller] || AppStore::Caller.new
     plist = caller.get(AppStore::Caller::SearchURL, :media => 'software', :term => text)
     AppStore::List.new :caller => caller, :list => plist['items']
   end

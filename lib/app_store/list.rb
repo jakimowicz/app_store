@@ -23,7 +23,7 @@ class AppStore::List
   def initialize(attrs = {})
     @element_initializer  = attrs[:element_initializer]
     @element_type         = attrs[:element_type]
-    @caller               = attrs[:caller] || AppStore::Caller
+    @caller               = attrs[:caller] || AppStore::Caller.new
     @elements ||= []
     
     process_new_elements attrs[:list]

@@ -6,16 +6,14 @@ require "plist"
 require "app_store"
 
 # Caller regroups all the calling and xml parsing mechanism to call the AppStore.
-module AppStore::Caller
-  extend self
-  
+class AppStore::Caller
+    
   FeaturedCategoriesURL = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewFeaturedSoftwareCategories"
   ApplicationURL        = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware"
   CategoryURL           = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewGenre"
   SearchURL             = "http://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search"
-
-  # Call the Apple AppStore using given <tt>url</tt> and passing <tt>params</tt> with an HTTP Get method.
-  def iphone_get(url, params = {})
+  
+  def initialize(args = {})
     # About the X-Apple-Store-Front header: this is used to select which store and which language.
     # Format is XXXXXX-Y,Z where XXXXXX is the store number (us, french, ...), Y the language and Z the return format.
     # If you omit the language, the default one for the store is used.
@@ -23,17 +21,21 @@ module AppStore::Caller
     # apple app store codes:
     # * 143441 : US
     # * 143442 : FR
-    answer = iphone_agent.get(:url => url, :headers => {"X-Apple-Store-Front" => '143441,2'}, :params => params)
-    raise AppStore::RequestError if answer.code.to_s != '200'
-    Plist::parse_xml answer.body
+    @store_front = args[:store_front] || '143441,2'
+  end
+
+  # Call the Apple AppStore using given <tt>url</tt> and passing <tt>params</tt> with an HTTP Get method.
+  # Call is seen as a fake iPhone iTunes client.
+  def iphone_get(url, params = {})
+    Plist::parse_xml make_call_and_handle_answer(iphone_agent, url, params).body
   end
   
   alias :get :iphone_get
   
+  # Call the Apple AppStore using given <tt>url</tt> and passing <tt>params</tt> with HTTP Get method.
+  # Call is seen as a fake Mac OS X iTunes client.
   def itunes_get(url, params = {})
-    answer = itunes_agent.get(url, params)
-    raise AppStore::RequestError if answer.code.to_s != '200'
-    Nokogiri.parse answer.body
+    Nokogiri.parse make_call_and_handle_answer(itunes_agent, url, params).body
   end
   
   protected
@@ -43,6 +45,20 @@ module AppStore::Caller
   
   def itunes_agent
     @itunes_agent ||= WWW::Mechanize.new { |a| a.user_agent = 'iTunes/9.0.1 (Macintosh; Intel Mac OS X 10.6.1) AppleWebKit/531.9' }
+  end
+  
+  def headers
+    {
+      "X-Apple-Store-Front" => @store_front
+    }
+  end
+  
+  # Make call using given <tt>agent</tt>, <tt>url</tt> and <tt>params</tt>.
+  # Handle answer code and returns answer if answer code was correct.
+  def make_call_and_handle_answer(agent, url, params)
+    answer = agent.get(:url => url, :headers => headers, :params => params)
+    raise AppStore::RequestError if answer.code.to_s != '200'
+    answer
   end
 
 end

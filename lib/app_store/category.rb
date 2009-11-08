@@ -44,14 +44,14 @@ class AppStore::Category < AppStore::Base
   # Returns an array of featured categories (main categories).
   # It is the same list as the one displayed in the iPhone AppStore.
   def self.featured(options = {})
-    caller = options[:caller] || AppStore::Caller
+    caller = options[:caller] || AppStore::Caller.new
     plist = caller.get(AppStore::Caller::FeaturedCategoriesURL)
     plist['items'].collect { |item| new :plist => item }
   end
   
   # Search a Category by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns a Category instance.
   def self.find_by_id(id, options = {})
-    caller = options[:caller] || AppStore::Caller
+    caller = options[:caller] || AppStore::Caller.new
     new :item_id  => id,
         :caller   => caller,
         :plist    => caller.get(AppStore::Caller::CategoryURL, :id => id)
