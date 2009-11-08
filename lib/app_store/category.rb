@@ -1,6 +1,5 @@
 require "app_store/base"
 require "app_store/application"
-require 'pp'
 
 # A category like categories on the AppStore.
 # Available attributes:
