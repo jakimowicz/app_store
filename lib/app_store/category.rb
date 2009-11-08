@@ -26,7 +26,7 @@ class AppStore::Category < AppStore::Base
   
   # Returns id for this category
   def item_id
-    @item_id ||= @raw['url'].match("id=([0-9]+)")[1]
+    @item_id ||= @raw['url'].match("mobile-software-applications/id([0-9]+)")[1]
   end
   
   # Returns an array of items contained in the category, with a maximum of 25 items (Apple limitation).
