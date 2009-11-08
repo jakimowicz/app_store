@@ -51,8 +51,7 @@ class AppStore::Category < AppStore::Base
   
   # Search a Category by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns a Category instance.
   def self.find_by_id(id)
-    # TODO: pass item_id to new
-    category = new(:plist => AppStore::Caller.get(AppStore::Caller::CategoryURL, :id => id))
+    category = new(:item_id => id, :plist => AppStore::Caller.get(AppStore::Caller::CategoryURL, :id => id))
   end
   
   # Returns id for this category

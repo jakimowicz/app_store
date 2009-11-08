@@ -11,7 +11,8 @@ class AppStore::Base
   # <tt>attrs</tt> accepts:
   # * <tt>:plist</tt>: a plist object to be parsed
   def initialize(attrs = {})
-    init_from_plist attrs[:plist] if attrs[:plist]
+    init_from_plist attrs.delete(:plist) if attrs[:plist]
+    attrs.each { |key, value| instance_variable_set "@#{key}", value}
   end
   
   protected
