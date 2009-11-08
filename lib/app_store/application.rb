@@ -66,17 +66,19 @@ class AppStore::Application < AppStore::Base
     }
   
   # Search an Application by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns an Application instance.
-  def self.find_by_id(id)
-    plist = AppStore::Caller.get(AppStore::Caller::ApplicationURL, :id => id)
+  def self.find_by_id(id, options = {})
+    caller = options[:caller] || AppStore::Caller
+    plist = caller.get(AppStore::Caller::ApplicationURL, :id => id)
     # TODO : Check if everything was right before instancianting
-    new :plist => plist['item-metadata']
+    new :caller => caller, :plist => plist['item-metadata']
   end
   
   # Search an Application by a <tt>text</tt>.
   # Returns an array with matching application or an empty array if no result found.
-  def self.search(text)
-    plist = AppStore::Caller.get(AppStore::Caller::SearchURL, :media => 'software', :term => text)
-    AppStore::List.new :list => plist['items']
+  def self.search(text, options = {})
+    caller = options[:caller] || AppStore::Caller
+    plist = caller.get(AppStore::Caller::SearchURL, :media => 'software', :term => text)
+    AppStore::List.new :caller => caller, :list => plist['items']
   end
   
   def initialize(attrs = {})
@@ -87,7 +89,7 @@ class AppStore::Application < AppStore::Base
   # Returns an AppStore::List of UserReview objects.
   def user_reviews
     if @user_reviews.nil?
-      plist = AppStore::Caller.get(@raw['view-user-reviews-url'])
+      plist = @caller.get(@raw['view-user-reviews-url'])
       @user_reviews = AppStore::List.new(:list => plist['items'])
     end
     @user_reviews
@@ -99,7 +101,7 @@ class AppStore::Application < AppStore::Base
   
   def icon
     if @icon.nil?
-      parsed = AppStore::Caller.itunes_get(AppStore::Caller::ApplicationURL, :id => item_id)
+      parsed = @caller.itunes_get(AppStore::Caller::ApplicationURL, :id => item_id)
       @icon = AppStore::Image.new(:plist => parsed.search('PictureView[@height="100"][@width="100"]').first)
     end
     

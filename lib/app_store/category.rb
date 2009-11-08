@@ -43,14 +43,18 @@ class AppStore::Category < AppStore::Base
   
   # Returns an array of featured categories (main categories).
   # It is the same list as the one displayed in the iPhone AppStore.
-  def self.featured
-    plist = AppStore::Caller.get(AppStore::Caller::FeaturedCategoriesURL)
+  def self.featured(options = {})
+    caller = options[:caller] || AppStore::Caller
+    plist = caller.get(AppStore::Caller::FeaturedCategoriesURL)
     plist['items'].collect { |item| new :plist => item }
   end
   
   # Search a Category by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns a Category instance.
-  def self.find_by_id(id)
-    category = new(:item_id => id, :plist => AppStore::Caller.get(AppStore::Caller::CategoryURL, :id => id))
+  def self.find_by_id(id, options = {})
+    caller = options[:caller] || AppStore::Caller
+    new :item_id  => id,
+        :caller   => caller,
+        :plist    => caller.get(AppStore::Caller::CategoryURL, :id => id)
   end
   
   # Returns id for this category
@@ -62,7 +66,7 @@ class AppStore::Category < AppStore::Base
   # Each element in the list can be either another category (subcategory) or a Link to an application.
   def items
     if @items.nil?
-      plist = @raw['items'] ? @raw : AppStore::Caller.get(@raw['url'])
+      plist = @raw['items'] ? @raw : @caller.get(@raw['url'])
       @items = AppStore::List.new(
         :list                 => plist['items'],
         :element_type         => 'link',

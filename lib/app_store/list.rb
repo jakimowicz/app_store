@@ -23,6 +23,7 @@ class AppStore::List
   def initialize(attrs = {})
     @element_initializer  = attrs[:element_initializer]
     @element_type         = attrs[:element_type]
+    @caller               = attrs[:caller] || AppStore::Caller
     @elements ||= []
     
     process_new_elements attrs[:list]
@@ -60,7 +61,7 @@ class AppStore::List
   # Return last fetched elements if any, nil otherwise
   def fetch_next_elements
     return nil if @link_to_next_elements.nil?
-    process_new_elements(AppStore::Caller.get(@link_to_next_elements)['items'])
+    process_new_elements(@caller.get(@link_to_next_elements)['items'])
   end
   
   def process_new_elements(new_elements)
@@ -72,11 +73,11 @@ class AppStore::List
       when @element_type
         result << initialize_element_and_append(element)
       when 'software'
-        result << append_element(AppStore::Application.new(:plist => element))
+        result << append_element(AppStore::Application.new(:caller => @caller, :plist => element))
       when 'review'
-        result << append_element(AppStore::UserReview.new(:plist => element))
+        result << append_element(AppStore::UserReview.new(:caller => @caller, :plist => element))
       when 'link'
-        result << append_element(AppStore::Link.new(:plist => element))
+        result << append_element(AppStore::Link.new(:caller => @caller, :plist => element))
       when 'more'
         @count                  = element['total-items']
         @link_to_next_elements  = element['url']
