@@ -60,10 +60,8 @@ class AppStore::Category < AppStore::Base
     @item_id ||= @raw['url'].match("mobile-software-applications/id([0-9]+)")[1]
   end
   
-  # Returns an array of items contained in the category, with a maximum of 25 items (Apple limitation).
-  # If there are more than 25 items in the category, an extra item is added at the end of the list
-  # as a link to the next 25 entries.
-  # Each element can be either a Category or an Application.
+  # Returns an instance of List which contains items elements.
+  # Each element in the list can be either another category (subcategory) or a Link to an application.
   def items
     if @items.nil?
       plist = @raw['items'] ? @raw : AppStore::Caller.get(@raw['url'])

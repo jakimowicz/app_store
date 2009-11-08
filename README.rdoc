@@ -66,6 +66,17 @@ It provides way to search for applications, navigate through categories.
 
    AppStore::Category.featured.each {|category| go_deeper category}
 
+=== List
+Every list elements returned by the Apple AppStore are limited to 25 elements.
+An additional element is provided at the end of the list to fetch the next elements.
+AppStore::List provides an abstraction to this list and allows to iterate through each element like a traditional enumerable object.
+
+   list = AppStore::Category.featured.first
+   list = Category.featured.first.items
+   list.count                          # => 23453
+   list.elements                       # => [AppStore::Category, AppStore::Category, ...]
+   list.collect {|item| item.item_id}  # => [9843509, 9028423, 8975435, 987345, ...]
+
 == REQUIREMENTS
 
 * mechanize gem

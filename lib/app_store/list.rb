@@ -5,6 +5,12 @@ require 'app_store'
 # sends only 24 elements followed by a link for the next 24 elements.
 # This class represents an abstraction of Apple AppStore lists, have
 # a real count attribute and is enumerable over the entire list.
+# = Example
+#  list = Category.featured.first.items
+#  list.count                          # => 23453
+#  list.elements                       # => [AppStore::Category, AppStore::Category, ...]
+#  list.collect {|item| item.item_id}  # => [9843509, 9028423, 8975435, 987345, ...]
+#
 class AppStore::List
   include Enumerable
   
@@ -28,11 +34,14 @@ class AppStore::List
     @count ||= @elements.count
   end
   
+  # Iterates the given block using each object in the list.
   def each(&block)
     collect(&block)
     @elements
   end
   
+  # Iterates the given block using each object in the list,
+  # returns an array containing the execution block result for each element.
   def collect
     # First, iterate through already fetched elements
     result = @elements.collect {|element| yield element}

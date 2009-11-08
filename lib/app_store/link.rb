@@ -8,7 +8,7 @@ class AppStore::Link < AppStore::Base
     'title'       => :title,
     'url'         => :url
   }
-  
+
   def destination
     @destination ||= case @item_type
     when 'software'
