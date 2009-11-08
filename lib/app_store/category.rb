@@ -6,6 +6,36 @@ require 'pp'
 # Available attributes:
 # * <tt>item-count</tt>: total items count for this category.
 # * <tt>title</tt>: title for the category.
+# = Examples
+# === Fetch featured categories
+#  @categories = AppStore::Category.featured
+#  @categories.class              # => Array
+#  @categories.length             # => 20
+# 
+# === Use category
+#  @category = @categories.first
+#  @category.title                # => "Games"
+#  @category.item_count           # => 1573
+# 
+# === Category by id
+#  @category = AppStore::Category.find_by_id(6014)
+#  @category.title                # => "Games"
+# 
+# === Iterate through subcategories and applications
+# This example will display all categories with all applications available in the current AppStore
+#  def go_deeper(category)
+#    puts "Category #{category.title}"
+#    category.items.each do |item|
+#      if item.is_a?(AppStore::Category)
+#        go_deeper item
+#      else
+#        puts " => #{item.title} has id #{item.item_id}"
+#      end
+#    end
+#  end
+#  
+#  AppStore::Category.featured.each {|category| go_deeper category}
+#
 class AppStore::Category < AppStore::Base
   plist :mapping => {
     'item-count'  => :item_count,
@@ -19,6 +49,7 @@ class AppStore::Category < AppStore::Base
     plist['items'].collect { |item| new :plist => item }
   end
   
+  # Search a Category by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns a Category instance.
   def self.find_by_id(id)
     # TODO: pass item_id to new
     category = new(:plist => AppStore::Caller.get(AppStore::Caller::CategoryURL, :id => id))

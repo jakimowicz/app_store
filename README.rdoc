@@ -21,9 +21,9 @@ It provides way to search for applications, navigate through categories.
    @fontpicker.company.title     # => "Etienne Segonzac"
 
 * Medias
-	@fontpicker.screenshots				 		# => [#<AppStore::Image:0x1017683e0 @width=320, @ra ...
-	@fontpicker.screenshots.first.url	# => "http://a1.phobos.apple.com/us/r1000/017/Purple/c4/99/6d/mzl.jtoxfers.480x480-75.jpg"
-	@fontpicker.icon.url							# => "http://a1.phobos.apple.com/us/r1000/026/Purple/39/40/54/mzl.yrrhymuu.100x100-75.jpg"
+   @fontpicker.screenshots            # => [#<AppStore::Image:0x1017683e0 @width=320, @ra ...
+   @fontpicker.screenshots.first.url  # => "http://a1.phobos.apple.com/us/r1000/017/Purple/c4/99/6d/mzl.jtoxfers.480x480-75.jpg"
+   @fontpicker.icon.url               # => "http://a1.phobos.apple.com/us/r1000/026/Purple/39/40/54/mzl.yrrhymuu.100x100-75.jpg"
 
 * User reviews
    @remote = AppStore::Application.find_by_id(284417350)
@@ -46,15 +46,25 @@ It provides way to search for applications, navigate through categories.
    @category = @categories.first
    @category.title                # => "Games"
    @category.item_count           # => 1573
-   
-   # Go through subcategories and applications
-   @subcategory = @category.items.last
-   @subcategory.class             # => AppStore::Category
-   @subcategory.title             # => "Word"
-   @subcategory.items.length      # => 26
-   @subcategory.items.first.class # => AppStore::Application
-   @subcategory.items.last.class  # => AppStore::Category
-   @subcategory.items.last.title  # => "Twenty Five More..."
+
+   # Category by id
+   @category = AppStore::Category.find_by_id(6014)
+   @category.title                # => "Games"
+
+   # Iterate through subcategories and applications
+   # This example will display all categories with all applications available in the current AppStore
+   def go_deeper(category)
+     puts "Category #{category.title}"
+     category.items.each do |item|
+       if item.is_a?(AppStore::Category)
+         go_deeper item
+       else
+         puts " => #{item.title} has id #{item.item_id}"
+       end
+     end
+   end
+
+   AppStore::Category.featured.each {|category| go_deeper category}
 
 == REQUIREMENTS
 
