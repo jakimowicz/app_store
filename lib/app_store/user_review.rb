@@ -14,4 +14,14 @@ class AppStore::UserReview < AppStore::Base
       'title'               => :title,
       'text'                => :text
     }
+    
+  # version on which the comment was made
+  def on_version
+    @on_version ||= title.match(/.*\(v(.*)\)$/)[1]
+  end
+  
+  # display position of the user review
+  def position
+    @position ||= title.match(/^([0-9]+)\..*/)[1]
+  end
 end
