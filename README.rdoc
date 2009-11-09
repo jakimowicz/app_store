@@ -77,6 +77,16 @@ AppStore::List provides an abstraction to this list and allows to iterate throug
    list.elements                       # => [AppStore::Category, AppStore::Category, ...]
    list.collect {|item| item.item_id}  # => [9843509, 9028423, 8975435, 987345, ...]
 
+=== Agent
+There are several Apple AppStore defined by their country. You will have different results (applications, comments) from different store front. You can use AppStore::Agent to ensure you make all yours calls to a specific AppStore (store front).
+You have a list of available store fronts in the constant StoreFronts defined in AppStore::Client.
+
+   agent = AppStore::Agent.new(:store_front => :fr)
+   agent.category.featured                           # => will call Category.featured with store front set to :fr
+   agent.application.find_by_id(42)                  # => will call Application.find_by_id(42) with store front set to :fr
+   agent.application.find_by_id(42, :bleh => 'yeah') # => also accepts extra arguments and merge them with store front
+
+
 == REQUIREMENTS
 
 * mechanize gem
