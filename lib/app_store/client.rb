@@ -7,21 +7,26 @@ require "app_store"
 
 # Client regroups all the calling and xml parsing mechanism to call the AppStore.
 class AppStore::Client
-    
+
+  # Urls
   FeaturedCategoriesURL = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewFeaturedSoftwareCategories"
   ApplicationURL        = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware"
   CategoryURL           = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewGenre"
   SearchURL             = "http://ax.search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search"
+  
+  # Store Front
+  StoreFronts           = {
+    :us   => "143441",
+    :fr   => "143442"
+  }
+  DefaultStoreFront     = StoreFronts[:us]
   
   def initialize(args = {})
     # About the X-Apple-Store-Front header: this is used to select which store and which language.
     # Format is XXXXXX-Y,Z where XXXXXX is the store number (us, french, ...), Y the language and Z the return format.
     # If you omit the language, the default one for the store is used.
     # Return format can be either "1" or "2" : "1" returns data to be directly displayed and "2" is a more structured format.
-    # apple app store codes:
-    # * 143441 : US
-    # * 143442 : FR
-    @store_front = args[:store_front] || '143441,2'
+    @store_front = "#{args[:store_front] || DefaultStoreFront},2"
   end
 
   # Call the Apple AppStore using given <tt>url</tt> and passing <tt>params</tt> with an HTTP Get method.
