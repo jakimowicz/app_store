@@ -25,7 +25,18 @@ class AppStore::UserReview < AppStore::Base
     @position ||= title.match(/^([0-9]+)\..*/)[1]
   end
   
+  # title extracted from title without position and version
   def clean_title
     title.match(/^[0-9]+\. (.*) \(v.*\)$/)[1]
+  end
+  
+  # date of the comment, extracted from user_name
+  def date
+    Time.parse user_name.match(/ on ([a-zA-Z]{3} [0-9]{1,2}, [0-9]{4})$/)[1]
+  end
+  
+  # user_name without date
+  def clean_user_name
+    user_name.match(/^(.*) on [a-zA-Z]{3} [0-9]{1,2}, [0-9]{4}$/)[1]
   end
 end
