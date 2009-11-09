@@ -24,4 +24,8 @@ class AppStore::UserReview < AppStore::Base
   def position
     @position ||= title.match(/^([0-9]+)\..*/)[1]
   end
+  
+  def clean_title
+    title.match(/^[0-9]+\. (.*) \(v.*\)$/)[1]
+  end
 end
