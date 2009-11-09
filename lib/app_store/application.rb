@@ -67,18 +67,18 @@ class AppStore::Application < AppStore::Base
   
   # Search an Application by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns an Application instance.
   def self.find_by_id(id, options = {})
-    caller = options[:caller] || AppStore::Caller.new
-    plist = caller.get(AppStore::Caller::ApplicationURL, :id => id)
+    client = options[:client] || AppStore::Client.new
+    plist = client.get(AppStore::Client::ApplicationURL, :id => id)
     # TODO : Check if everything was right before instancianting
-    new :caller => caller, :plist => plist['item-metadata']
+    new :client => client, :plist => plist['item-metadata']
   end
   
   # Search an Application by a <tt>text</tt>.
   # Returns an array with matching application or an empty array if no result found.
   def self.search(text, options = {})
-    caller = options[:caller] || AppStore::Caller.new
-    plist = caller.get(AppStore::Caller::SearchURL, :media => 'software', :term => text)
-    AppStore::List.new :caller => caller, :list => plist['items']
+    client = options[:client] || AppStore::Client.new
+    plist = client.get(AppStore::Client::SearchURL, :media => 'software', :term => text)
+    AppStore::List.new :client => client, :list => plist['items']
   end
   
   def initialize(attrs = {})
@@ -89,7 +89,7 @@ class AppStore::Application < AppStore::Base
   # Returns an AppStore::List of UserReview objects.
   def user_reviews
     if @user_reviews.nil?
-      plist = @caller.get(@raw['view-user-reviews-url'])
+      plist = @client.get(@raw['view-user-reviews-url'])
       @user_reviews = AppStore::List.new(:list => plist['items'])
     end
     @user_reviews
@@ -101,7 +101,7 @@ class AppStore::Application < AppStore::Base
   
   def icon
     if @icon.nil?
-      parsed = @caller.itunes_get(AppStore::Caller::ApplicationURL, :id => item_id)
+      parsed = @client.itunes_get(AppStore::Client::ApplicationURL, :id => item_id)
       @icon = AppStore::Image.new(:plist => parsed.search('PictureView[@height="100"][@width="100"]').first)
     end
     

@@ -5,8 +5,8 @@ require "plist"
 
 require "app_store"
 
-# Caller regroups all the calling and xml parsing mechanism to call the AppStore.
-class AppStore::Caller
+# Client regroups all the calling and xml parsing mechanism to call the AppStore.
+class AppStore::Client
     
   FeaturedCategoriesURL = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewFeaturedSoftwareCategories"
   ApplicationURL        = "http://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware"

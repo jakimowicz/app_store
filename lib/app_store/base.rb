@@ -1,4 +1,4 @@
-require "app_store/caller"
+require "app_store/client"
 require "app_store/helpers/plist"
 
 # Implements basic operations for AppStore objects : initialization, plist parsing, ...

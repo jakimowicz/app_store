@@ -1,5 +1,4 @@
 require "app_store/base"
-require "app_store/caller"
 
 class AppStore::Link < AppStore::Base
   plist :mapping => {
@@ -12,7 +11,7 @@ class AppStore::Link < AppStore::Base
   def destination
     @destination ||= case @item_type
     when 'software'
-      AppStore::Application.new :plist => @caller.get(@url)['item-metadata']
+      AppStore::Application.new :plist => @client.get(@url)['item-metadata']
     else
       raise 'unsupported'
     end

@@ -44,17 +44,17 @@ class AppStore::Category < AppStore::Base
   # Returns an array of featured categories (main categories).
   # It is the same list as the one displayed in the iPhone AppStore.
   def self.featured(options = {})
-    caller = options[:caller] || AppStore::Caller.new
-    plist = caller.get(AppStore::Caller::FeaturedCategoriesURL)
-    plist['items'].collect { |item| new :plist => item }
+    client = options[:client] || AppStore::Client.new
+    plist = client.get(AppStore::Client::FeaturedCategoriesURL)
+    plist['items'].collect { |item| new :client => client, :plist => item }
   end
   
   # Search a Category by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns a Category instance.
   def self.find_by_id(id, options = {})
-    caller = options[:caller] || AppStore::Caller.new
+    client = options[:client] || AppStore::Client.new
     new :item_id  => id,
-        :caller   => caller,
-        :plist    => caller.get(AppStore::Caller::CategoryURL, :id => id)
+        :client   => client,
+        :plist    => client.get(AppStore::Client::CategoryURL, :id => id)
   end
   
   # Returns id for this category
@@ -66,12 +66,14 @@ class AppStore::Category < AppStore::Base
   # Each element in the list can be either another category (subcategory) or a Link to an application.
   def items
     if @items.nil?
-      plist = @raw['items'] ? @raw : @caller.get(@raw['url'])
+      plist = @raw['items'] ? @raw : @client.get(@raw['url'])
       @items = AppStore::List.new(
+        :client               => @client,
         :list                 => plist['items'],
         :element_type         => 'link',
         :element_initializer  => lambda {|element|
-          (element['link-type'] == 'software' ? AppStore::Link : AppStore::Category).new(:plist => element)
+          (element['link-type'] == 'software' ? AppStore::Link : AppStore::Category).new(:client => @client,
+                                                                                         :plist => element)
         }
       )
     end
