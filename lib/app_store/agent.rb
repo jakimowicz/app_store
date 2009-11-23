@@ -12,7 +12,7 @@ require 'app_store/helpers/proxy'
 #  agent.application.find_by_id(42, :bleh => 'yeah') # => also accepts extra arguments and merge them with store front
 class AppStore::Agent
   def initialize(args = {})
-    @store_front = AppStore::Client::StoreFronts[args[:store_front]] || AppStore::Client::DefaultStoreFront
+    @store_front = args[:store_front] || AppStore::Client::DefaultStoreFrontName
     @client = AppStore::Client.new(:store_front => @store_front)
   end
   

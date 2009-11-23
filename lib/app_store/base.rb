@@ -15,6 +15,10 @@ class AppStore::Base
     attrs.each { |key, value| instance_variable_set "@#{key}", value}
   end
   
+  def store_front_name
+    @store_front_name ||= @client.store_front_name
+  end
+  
   protected
   def init_from_plist(plist)
     custom_init_from_plist plist if respond_to?(:custom_init_from_plist)
