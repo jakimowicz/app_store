@@ -11,7 +11,8 @@ class AppStore::Link < AppStore::Base
   def destination
     @destination ||= case @item_type
     when 'software'
-      AppStore::Application.new :plist => @client.get(@url)['item-metadata']
+      AppStore::Application.new :plist => @client.get(@url)['item-metadata'],
+                                :client => @client
     else
       raise 'unsupported'
     end
