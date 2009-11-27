@@ -59,7 +59,7 @@ class AppStore::Category < AppStore::Base
   
   # Returns id for this category
   def item_id
-    @item_id ||= @raw['url'].match("mobile-software-applications/id([0-9]+)")[1]
+    @item_id ||= @raw['url'].match(/^http:\/\/.*\/.*id[=]{0,1}([0-9]+)[&?].*$/)[1]
   end
   
   # Returns an instance of List which contains items elements.
