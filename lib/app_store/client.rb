@@ -19,8 +19,15 @@ class AppStore::Client
   
   # Store Front
   StoreFronts           = {
-    :us   => "143441",
-    :fr   => "143442"
+    :ar   => "143505",  # Argentina
+    :au   => "143460",  # Australia
+    :be   => "143446",  # Belgium
+    :br   => "143503",  # Brazil
+    :ca   => "143455",  # Canada
+    :cl   => "143483",  # Chile
+    :cn   => "143465",  # China
+    :fr   => "143442",  # France
+    :us   => "143441",  # United states
   }
 
   DefaultStoreFrontName = :us
