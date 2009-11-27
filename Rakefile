@@ -10,7 +10,6 @@ begin
     gem.email = "fabien@jakimowicz.com"
     gem.homepage = "http://github.com/jakimowicz/app_store"
     gem.authors = ["Fabien Jakimowicz"]
-    gem.rubyforge_project = "app_store"
     gem.add_development_dependency "thoughtbot-shoulda"
     gem.add_development_dependency "fake_mechanize"
     gem.add_dependency "nokogiri"
