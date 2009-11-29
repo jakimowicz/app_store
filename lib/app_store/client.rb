@@ -66,6 +66,7 @@ class AppStore::Client
   
   def headers
     {
+      "X-Apple-Client-Application" => "Software",
       "X-Apple-Store-Front" => @store_front
     }
   end
