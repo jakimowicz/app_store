@@ -57,11 +57,11 @@ class AppStore::Client
   
   protected
   def iphone_agent
-    @iphone_agent ||= WWW::Mechanize.new { |a| a.user_agent = 'iTunes-iPhone/3.0 (2)' }
+    @iphone_agent ||= Mechanize.new { |a| a.user_agent = 'iTunes-iPhone/3.0 (2)' }
   end
   
   def itunes_agent
-    @itunes_agent ||= WWW::Mechanize.new { |a| a.user_agent = 'iTunes/9.0.1 (Macintosh; Intel Mac OS X 10.6.1) AppleWebKit/531.9' }
+    @itunes_agent ||= Mechanize.new { |a| a.user_agent = 'iTunes/9.0.1 (Macintosh; Intel Mac OS X 10.6.1) AppleWebKit/531.9' }
   end
   
   def headers

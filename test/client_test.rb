@@ -10,7 +10,7 @@ class ClientTest < Test::Unit::TestCase
     end
   
     should "returns a mechanize agent on call to iphone_agent" do
-      assert_kind_of WWW::Mechanize, @client.iphone_agent
+      assert_kind_of Mechanize, @client.iphone_agent
     end
 
     should "set mechanize user agent to iTunes-iPhone/3.0 (2) for iphone_agent" do
@@ -18,7 +18,7 @@ class ClientTest < Test::Unit::TestCase
     end
 
     should "returns a mechanize agent on call to itunes_agent" do
-      assert_kind_of WWW::Mechanize, @client.itunes_agent
+      assert_kind_of Mechanize, @client.itunes_agent
     end
 
     should "set mechanize user agent to iTunes/9.0.1 (Macintosh; Intel Mac OS X 10.6.1) AppleWebKit/531.9 for itunes_agent" do
