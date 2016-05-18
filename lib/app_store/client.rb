@@ -4,6 +4,7 @@ require "mechanize"
 require "plist"
 
 require "app_store"
+require "app_store/plist_parser"
 
 # Client regroups all the calling and xml parsing mechanism to call the AppStore.
 class AppStore::Client
@@ -44,7 +45,7 @@ class AppStore::Client
   # Call the Apple AppStore using given <tt>url</tt> and passing <tt>params</tt> with an HTTP Get method.
   # Call is seen as a fake iPhone iTunes client.
   def iphone_get(url, params = {})
-    Plist::parse_xml make_call_and_handle_answer(iphone_agent, url, params).body
+    make_call_and_handle_answer(iphone_agent, url, params)
   end
   
   alias :get :iphone_get
@@ -52,16 +53,28 @@ class AppStore::Client
   # Call the Apple AppStore using given <tt>url</tt> and passing <tt>params</tt> with HTTP Get method.
   # Call is seen as a fake Mac OS X iTunes client.
   def itunes_get(url, params = {})
-    Nokogiri.parse make_call_and_handle_answer(itunes_agent, url, params).body
+    make_call_and_handle_answer(itunes_agent, url, params)
+  end
+  
+  def browser_get(url, params = {})
+    make_call_and_handle_answer(browser_agent, url, params)
   end
   
   protected
+  def setup_agent(agent)
+    agent.pluggable_parser['text/xml'] = PlistParser
+  end
+  
   def iphone_agent
-    @iphone_agent ||= WWW::Mechanize.new { |a| a.user_agent = 'iTunes-iPhone/3.0 (2)' }
+    @iphone_agent ||= Mechanize.new { |a| setup_agent(a); a.user_agent = 'iTunes-iPhone/3.0 (2)' }
   end
   
   def itunes_agent
-    @itunes_agent ||= WWW::Mechanize.new { |a| a.user_agent = 'iTunes/9.0.1 (Macintosh; Intel Mac OS X 10.6.1) AppleWebKit/531.9' }
+    @itunes_agent ||= Mechanize.new { |a| setup_agent(a); a.user_agent = 'iTunes/9.0.1 (Macintosh; Intel Mac OS X 10.6.1) AppleWebKit/531.9' }
+  end
+
+  def browser_agent
+    @itunes_agent ||= Mechanize.new { |a| setup_agent(a); a.user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7.4) AppleWebKit/536.5 (KHTML, like Gecko) Chrome/19.0.1084.56 Safari/536.5' }
   end
   
   def headers
@@ -74,7 +87,7 @@ class AppStore::Client
   # Make call using given <tt>agent</tt>, <tt>url</tt> and <tt>params</tt>.
   # Handle answer code and returns answer if answer code was correct.
   def make_call_and_handle_answer(agent, url, params)
-    answer = agent.get(:url => url, :headers => headers, :params => params)
+    answer = agent.get(url, params, nil, headers)
     raise AppStore::RequestError if answer.code.to_s != '200'
     answer
   end

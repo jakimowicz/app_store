@@ -1,9 +1,9 @@
 require "app_store/base"
 require "app_store/company"
 require "app_store/user_review"
-require "app_store/artwork"
 require "app_store/list"
 require "app_store/link"
+require "app_store/image"
 
 # Represents an application in the AppStore.
 # = Available attributes:
@@ -54,16 +54,15 @@ class AppStore::Application < AppStore::Base
   
   attr_reader :company, :price, :size, :artworks, :icon, :icon_thumbnail, :screenshots
   
-  plist :accepted_type => 'software',
-    :mapping => {
-      'average-user-rating' => :average_user_rating,
-      'user-rating-count'   => :user_rating_count,
-      'release-date'        => :release_date,
-      'description'         => :description,
-      'item-id'             => :item_id,
-      'version'             => :version,
-      'title'               => :title
-    }
+  plist :mapping => {
+    'average-user-rating' => :average_user_rating,
+    'user-rating-count'   => :user_rating_count,
+    'release-date'        => :release_date,
+    'description'         => :description,
+    'item-id'             => :item_id,
+    'version'             => :version,
+    'title'               => :title
+  }
   
   # Search an Application by its <tt>id</tt>. Accepts only one <tt>id</tt> and returns an Application instance.
   def self.find_by_id(id, options = {})
@@ -101,8 +100,10 @@ class AppStore::Application < AppStore::Base
   
   def icon
     if @icon.nil?
-      parsed = @client.itunes_get(AppStore::Client::ApplicationURL, :id => item_id)
-      @icon = AppStore::Image.new(:plist => parsed.search('PictureView[@height="100"][@width="100"]').first)
+      parsed = @client.browser_get(AppStore::Client::ApplicationURL, :id => item_id)
+      
+      plist = parsed.search('PictureView[@height="100"][@width="100"]').first
+      @icon = AppStore::Image.new(:plist => plist) if plist
     end
     
     @icon
@@ -110,6 +111,8 @@ class AppStore::Application < AppStore::Base
   
   protected
   def custom_init_from_plist(plist)
+    client = AppStore::Client.new
+    
     # Set size and price
     @price  = plist['store-offers']['STDQ']['price']
     @size   = plist['store-offers']['STDQ']['size']
@@ -117,16 +120,39 @@ class AppStore::Application < AppStore::Base
     # Seek for company
     @company  = AppStore::Company.new(:plist => plist['company'])
     
+    icons = []
+    
     # Parse artwork
-    @artworks = plist['artwork-urls'].collect do |plist_artwork|
-      # OPTIMIZE : handle default_screenshot
-      if plist_artwork['image-type'] and plist_artwork['default']
-        artwork = AppStore::Artwork.new :plist => plist_artwork
-        @icon_thumbnail ||= artwork.default if artwork.is_icon?
-        @screenshots << artwork.default unless artwork.is_icon?
-        artwork
+    @artworks = plist['artwork-urls'].collect do |plist_artwork_p|
+      if plist_artwork_p.include?("default@2x")
+        plist_artwork = plist_artwork_p["default@2x"] 
+      elsif plist_artwork_p.include?("default")
+        plist_artwork = plist_artwork_p["default"]
+      else
+        plist_artwork = plist_artwork_p
+      end
+      
+      result = AppStore::Image.new :plist => plist_artwork
+      
+      icons << result if plist_artwork_p["image-type"] == "software-icon"
+      
+      result
+    end
+
+    @artworks.compact!
+    
+    @icon_thumbnail ||= @artworks.first if @artworks.size > 0
+    
+    if icons.size > 0
+      @icon = icons.sort_by { |icon| icon.width * icon.height }.last
+      
+      icon_url = @icon.url.dup
+      icon_url[/\d+x\d+/] = "512x512"
+      
+      if icon_url != @icon.url then
+        result = begin; client.browser_get(icon_url); rescue Mechanize::ResponseCodeError; nil; end
+        @icon.url.replace(icon_url) if result
       end
     end
-    @artworks.compact!
   end
 end
